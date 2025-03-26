@@ -1,0 +1,973 @@
+#MembraneTestControlArea {
+    background: #383838;
+}
+
+#MembraneTestControlArea QGroupBox{
+    background: #383838;
+    border: 1px solid #313030; /* 设置边框线的颜色和类型 */
+}
+
+#MembraneTestControlArea QTabWidget::pane {
+    border: solid 0.5px  black;  /* 内容区域的黑色细实线边框 */
+}
+
+#MembraneTestControlArea QTabWidget::tab-bar {
+    alignment: center; /* 可选：让选项卡对齐中间 */
+    border: 0.5px  black;
+}
+
+#MembraneTestControlArea QTabBar::tab {
+    min-width: 46px; /* 设置最小宽度，防止选项卡过窄
+    min-height:40px;
+    text-align: center; /* 文字居中 */
+    padding: 10px; /* 内边距 */
+    border: 1px solid black; /* 黑色边框 */
+    background: #383838; /* 背景色 */
+    color: #d2d2d2; /* 文字颜色 */
+}
+
+#MembraneTestControlArea QTabBar::tab:first {
+    margin-left: 0;
+}
+
+#MembraneTestControlArea QTabBar::tab:last {
+    margin-right: 0;
+}
+
+#MembraneTestControlArea QTabBar {
+    qproperty-expanding: 1; /* 关键属性：选项卡均匀铺满 */
+}
+#MembraneTestControlArea QTabBar::tab:selected {
+    background: #505050; /* 选中选项卡的背景色 */
+    font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+    font-weight: 400;
+    color: #5aa4f0;
+}
+
+
+#MembraneTestControlArea  #background1 {
+    background: #383838;
+    border: 1px solid black; /* 设置边框为1像素宽的黑色实线 */
+}
+
+
+#MembraneTestControlArea > QPushButton:pressed {
+color: #5aa4f0;
+background: #2d2d2d;;      /* 按钮背景颜色 */
+}
+
+
+
+#probeTabWidget QTabWidget::tab-bar {
+    border: 0.5px solid black;
+}
+
+#probeTabWidget QTabBar {
+    border: none; /* 移除QTabBar的边框，如果不需要的话 */
+}
+
+#probeTabWidget QTabBar::tab {
+    padding: 0; /* 移除内边距 */
+    margin: 0; /* 移除外边距 */
+    text-align: center; /* 文字居中 */
+    background: #383838; /* 背景色 */
+    color: #d2d2d2; /* 文字颜色 */
+    border: 1px solid black; /* 黑色边框 */
+    min-width: 100; /* 移除最小宽度限制 */
+}
+
+#probeTabWidget QTabBar::tab {
+    width:130px;
+    height: 40px; /* 固定高度 */
+    text-align: center; /* 文字居中 */
+    border: 1px solid black; /* 黑色边框 */
+    background: #383838; /* 背景色 */
+    color: #d2d2d2; /* 文字颜色 */
+}
+
+#probeTabWidget QTabBar::tab:selected {
+    background: #505050; /* 选中选项卡的背景色 */
+    font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+    font-weight: 400;
+    color: #5aa4f0;
+}
+
+
+
+#CClampTabWidget {
+    background: #383838;
+}
+
+
+#clampWidget QTabWidget::pane {
+    border: solid 0.5px  black;  /* 内容区域的黑色细实线边框 */
+}
+
+#clampWidget QTabWidget::tab-bar {
+    alignment: center; /* 可选：让选项卡对齐中间 */
+    border: 0.5px  black;
+}
+
+#clampWidget QTabBar::tab {
+    min-width: 46px; /* 设置最小宽度，防止选项卡过窄
+    min-height:50px;
+    text-align: center; /* 文字居中 */
+    padding: 10px; /* 内边距 */
+    border: 1px solid black; /* 黑色边框 */
+    background: #383838; /* 背景色 */
+    color: #d2d2d2; /* 文字颜色 */
+}
+
+#clampWidget QTabBar::tab:first {
+    margin-left: 0;
+}
+
+#clampWidget QTabBar::tab:last {
+    margin-right: 0;
+}
+
+#clampWidget QTabBar {
+    qproperty-expanding: 1; /* 关键属性：选项卡均匀铺满 */
+
+}
+
+#clampWidget QTabBar::tab {
+    width:120%;
+    height:40px;
+    padding: 0; /* 移除内边距 */
+    margin: 0; /* 移除外边距 */
+    text-align: center; /* 文字居中 */
+    background: #383838; /* 背景色 */
+    color: #d2d2d2; /* 文字颜色 */
+    border: 1px solid black; /* 黑色边框 */
+}
+
+
+#clampWidget QTabBar::tab:selected {
+    background: #505050; /* 选中选项卡的背景色 */
+    font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+    font-weight: 400;
+    color: #5aa4f0;
+}
+
+
+#clampWidget  #background1 {
+    background: #383838;
+    border: 1px solid black; /* 设置边框为1像素宽的黑色实线 */
+}
+
+
+/*设置电流钳界面的样式*/
+#volTab QGroupBox {
+    background: #383838;
+    border: 1px solid #515151;
+    font-size: 13px;
+    font-family: "Microsoft YaHei", "Microsoft YaHei Regular";
+    font-weight: 400;
+    color: #cccccc;
+    letter-spacing: 0.65px;
+    margin-top: 3ex; /* 调整标题的垂直位置 */
+}
+
+
+/*设置CParamWnd中的label样式*/
+#volTab QLabel {
+font-size: 13px;
+font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+font-weight: 400;
+color: #d2d2d2;
+}
+
+#volTab QLineEdit{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+}
+
+#volTab QGroupBox::title {
+    subcontrol-origin: margin; /* 将标题的位置相对于边框的外边距进行定位 */
+    subcontrol-position: top left; /* 标题的位置 */
+    left: 10px; /* 标题距离左边的距离 */
+    margin-left: 2px; /* 标题距离左边的外边距 */
+    padding: 0 0px; /* 标题的内边距 */
+
+}
+
+#volTab  QSpinBox{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+font-size: 13px;
+font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+font-weight: 400;
+color: #e5e5e5;
+line-height: 40px;
+padding-left: 2ex;
+}
+
+#volTab QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: right bottom; /* 或者根据您的布局需要调整位置 */
+    image: url(:/img/resource/tool/arrowDown.png); /* 替换为您的图片路径 */
+    width: 15px; /* 设置图片宽度 */
+    height: 15px; /* 设置图片高度 */
+}
+
+
+#volTab QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: right top; /* 或者根据您的布局需要调整位置 */
+    image: url(:/img/resource/tool/arrowUp.png); /* 替换为您的图片路径 */
+    width: 15px; /* 设置图片宽度 */
+    height: 15px; /* 设置图片高度 */
+
+}
+
+
+#volTab  QDoubleSpinBox{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+font-size: 13px;
+font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+font-weight: 400;
+color: #e5e5e5;
+line-height: 40px;
+padding-left: 2ex;
+}
+
+#volTab QDoubleSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: right bottom; /* 或者根据您的布局需要调整位置 */
+    image: url(:/img/resource/tool/arrowDown.png); /* 替换为您的图片路径 */
+    width: 15px; /* 设置图片宽度 */
+    height: 15px; /* 设置图片高度 */
+}
+
+
+#volTab QDoubleSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: right top; /* 或者根据您的布局需要调整位置 */
+    image: url(:/img/resource/tool/arrowUp.png); /* 替换为您的图片路径 */
+    width: 15px; /* 设置图片宽度 */
+    height: 15px; /* 设置图片高度 */
+}
+
+#volTab QComboBox{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+color:white;
+padding-left: 2ex;
+}
+
+
+
+#volTab  QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right center; /* 放于右方顶部 */
+    width: 15px; /* 设置按钮宽度 */
+    height: 15px; /* 设置按钮高度 */
+    border:none;
+}
+
+#volTab  QComboBox::down-arrow {
+    image: url(:/img/resource/tool/arrowDown.png); /* 替换为您的图片路径 */
+    width: 15px; /* 图片宽度 */
+    height: 15px; /* 图片高度 */
+}
+
+
+#volTab  QComboBox QAbstractItemView {
+    background-color: #383838;  /* 下拉菜单背景颜色 */
+    border: 1px solid #515151;  /* 边框颜色 */
+    color: white;               /* 文字颜色 */
+    selection-background-color: #515151; /* 选中项背景色 */
+    selection-color: white;     /* 选中项字体颜色 */
+}
+
+
+
+ #volTab QPushButton {
+    background-color: #4A4A4A; /* 鼠标悬停时的背景色 */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 边框颜色，带透明度 */
+    border-radius: 5px; /* 圆角半径 */
+    color: #FFFFFF; /* 文字颜色 */
+    font: 14px "Microsoft YaHei"; /* 字体大小和字体族 */
+    padding: 5px 15px; /* 内边距 */
+}
+
+#volTab QPushButton:hover {
+    background-color: #383838; /* 鼠标悬停时的背景色 */
+}
+
+#volTab QPushButton:pressed {
+    background-color: #303030; /* 按下时的背景色 */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* 按下时的边框颜色 */
+}
+
+
+
+/*设置电流钳界面的样式*/
+#curTab QGroupBox {
+    background: #383838;
+    border: 1px solid #515151;
+    font-size: 13px;
+    font-family: "Microsoft YaHei", "Microsoft YaHei Regular";
+    font-weight: 400;
+    color: #cccccc;
+    letter-spacing: 0.65px;
+    margin-top: 3ex; /* 调整标题的垂直位置 */
+}
+
+
+/*设置CParamWnd中的label样式*/
+#curTab QLabel {
+font-size: 13px;
+font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+font-weight: 400;
+color: #d2d2d2;
+}
+
+#curTab QLineEdit{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+}
+
+#curTab QGroupBox::title {
+    subcontrol-origin: margin; /* 将标题的位置相对于边框的外边距进行定位 */
+    subcontrol-position: top left; /* 标题的位置 */
+    left: 10px; /* 标题距离左边的距离 */
+    margin-left: 2px; /* 标题距离左边的外边距 */
+    padding: 0 0px; /* 标题的内边距 */
+
+}
+
+#curTab  QSpinBox{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+font-size: 13px;
+font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+font-weight: 400;
+color: #e5e5e5;
+line-height: 40px;
+padding-left: 2ex;
+}
+
+#curTab QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: right bottom; /* 或者根据您的布局需要调整位置 */
+    image: url(:/img/resource/tool/arrowDown.png); /* 替换为您的图片路径 */
+    width: 15px; /* 设置图片宽度 */
+    height: 15px; /* 设置图片高度 */
+}
+
+
+#curTab QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: right top; /* 或者根据您的布局需要调整位置 */
+    image: url(:/img/resource/tool/arrowUp.png); /* 替换为您的图片路径 */
+    width: 15px; /* 设置图片宽度 */
+    height: 15px; /* 设置图片高度 */
+
+}
+
+
+#curTab  QDoubleSpinBox{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+font-size: 13px;
+font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+font-weight: 400;
+color: #e5e5e5;
+line-height: 40px;
+padding-left: 2ex;
+}
+
+#curTab QDoubleSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: right bottom; /* 或者根据您的布局需要调整位置 */
+    image: url(:/img/resource/tool/arrowDown.png); /* 替换为您的图片路径 */
+    width: 15px; /* 设置图片宽度 */
+    height: 15px; /* 设置图片高度 */
+}
+
+
+#curTab QDoubleSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: right top; /* 或者根据您的布局需要调整位置 */
+    image: url(:/img/resource/tool/arrowUp.png); /* 替换为您的图片路径 */
+    width: 15px; /* 设置图片宽度 */
+    height: 15px; /* 设置图片高度 */
+}
+
+#curTab QComboBox{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+color:white;
+padding-left: 2ex;
+}
+
+
+
+#curTab  QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right center; /* 放于右方顶部 */
+    width: 15px; /* 设置按钮宽度 */
+    height: 15px; /* 设置按钮高度 */
+    border:none;
+}
+
+#curTab  QComboBox::down-arrow {
+    image: url(:/img/resource/tool/arrowDown.png); /* 替换为您的图片路径 */
+    width: 15px; /* 图片宽度 */
+    height: 15px; /* 图片高度 */
+}
+
+
+#curTab  QComboBox QAbstractItemView {
+    background-color: #383838;  /* 下拉菜单背景颜色 */
+    border: 1px solid #515151;  /* 边框颜色 */
+    color: white;               /* 文字颜色 */
+    selection-background-color: #515151; /* 选中项背景色 */
+    selection-color: white;     /* 选中项字体颜色 */
+}
+
+
+
+ #curTab QPushButton {
+    background-color: #4A4A4A; /* 鼠标悬停时的背景色 */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 边框颜色，带透明度 */
+    border-radius: 5px; /* 圆角半径 */
+    color: #FFFFFF; /* 文字颜色 */
+    font: 14px "Microsoft YaHei"; /* 字体大小和字体族 */
+    padding: 5px 15px; /* 内边距 */
+}
+
+#curTab QPushButton:hover {
+    background-color: #383838; /* 鼠标悬停时的背景色 */
+}
+
+#curTab QPushButton:pressed {
+    background-color: #303030; /* 按下时的背景色 */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* 按下时的边框颜色 */
+}
+
+
+
+
+/*参数设置窗口CParamWnd样式*/
+/* 设置CParamWnd中的GroupBox样式 */
+#chaParamWnd QGroupBox {
+    background: #383838;
+    border: 1px solid #515151;
+    font-size: 13px;
+    font-family: "Microsoft YaHei", "Microsoft YaHei Regular";
+    font-weight: 400;
+    color: #cccccc;
+    letter-spacing: 0.65px;
+}
+
+
+
+/*设置CParamWnd中的label样式*/
+#chaParamWnd QLabel {
+font-size: 13px;
+font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+font-weight: 400;
+color: #d2d2d2;
+}
+
+#chaParamWnd QLineEdit{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+}
+
+
+/*处理采样区域chaParamWnd区域样式*/
+#chaParamWnd QGroupBox {
+    border: 1px solid #515151; /* 设置边框线的颜色和类型 */
+    margin-top: 3ex; /* 调整标题的垂直位置 */
+    color: #cccccc;
+}
+
+#chaParamWnd QGroupBox::title {
+    subcontrol-origin: margin; /* 将标题的位置相对于边框的外边距进行定位 */
+    subcontrol-position: top left; /* 标题的位置 */
+    left: 10px; /* 标题距离左边的距离 */
+    margin-left: 2px; /* 标题距离左边的外边距 */
+    padding: 0 0px; /* 标题的内边距 */
+}
+
+
+
+#chaParamWnd QLabel {
+    background-repeat: no-repeat; /* 背景图片不重复 */
+    background-position: center; /* 背景图片居中 */
+}
+
+
+
+
+#chaParamWnd QLineEdit {
+    color:white;
+    padding-left: 2ex;
+}
+
+#chaParamWnd QCheckBox{
+font-size: 14px;
+font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+font-weight: 400;
+color: #e5e5e5;
+line-height: 40px;
+}
+
+#chaParamWnd QCheckBox::indicator {
+    width: 16px; /* 设置指示器的宽度 */
+    height: 16px; /* 设置指示器的高度 */
+}
+
+#chaParamWnd QCheckBox::indicator:unchecked {
+    image: url(:/icon/resource/icon/Double_Default.png); /* 未选中时的图片 */
+}
+
+#chaParamWnd QCheckBox::indicator:checked {
+    image: url(:/icon/resource/icon/Double_Selected.png); /* 选中时的图片 */
+}
+
+#chaParamWnd QComboBox {
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+padding-left: 2ex;
+color:#e5e5e5;
+}
+
+
+#stiParamWnd {
+    background: #383838;
+}
+
+/*刺激区域窗口样式设置*/
+#stiParamWnd QLabel{
+font-size: 13px;
+font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+font-weight: 400;
+color: #cccccc;
+letter-spacing: 0.65px;
+}
+
+
+
+#stiParamWnd QGroupBox {
+    border: 1px solid #515151; /* 设置边框线的颜色和类型 */
+    margin-top: 2ex; /* 调整标题的垂直位置 */
+    color: #cccccc;
+}
+
+#stiParamWnd QGroupBox::title {
+    subcontrol-origin: margin; /* 将标题的位置相对于边框的外边距进行定位 */
+    subcontrol-position: top left; /* 标题的位置 */
+    left: 10px; /* 标题距离左边的距离 */
+    margin-left: 2px; /* 标题距离左边的外边距 */
+    padding: 0 0px; /* 标题的内边距 */
+
+}
+
+
+#stiParamWnd  QSpinBox{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+font-size: 13px;
+font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+font-weight: 400;
+color: #e5e5e5;
+line-height: 40px;
+padding-left: 2ex;
+}
+
+#stiParamWnd  QDoubleSpinBox{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+font-size: 13px;
+font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+font-weight: 400;
+color: #e5e5e5;
+line-height: 40px;
+padding-left: 2ex;
+}
+
+
+#stiParamWnd QComboBox{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+color:white;
+padding-left: 2ex;
+}
+
+
+#stiParamWnd  QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right center; /* 放于右方顶部 */
+    width: 15px; /* 设置按钮宽度 */
+    height: 15px; /* 设置按钮高度 */
+    border:none;
+}
+
+#stiParamWnd  QComboBox::down-arrow {
+    image: url(:/img/resource/tool/arrowDown.png); /* 替换为您的图片路径 */
+    width: 15px; /* 图片宽度 */
+    height: 15px; /* 图片高度 */
+}
+
+
+#stiParamWnd  QComboBox QAbstractItemView {
+    background-color: #383838;  /* 下拉菜单背景颜色 */
+    border: 1px solid #515151;  /* 边框颜色 */
+    color: white;               /* 文字颜色 */
+    selection-background-color: #515151; /* 选中项背景色 */
+    selection-color: white;     /* 选中项字体颜色 */
+}
+
+
+#stiParamWnd QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: right bottom; /* 或者根据您的布局需要调整位置 */
+    image: url(:/img/resource/tool/arrowDown.png); /* 替换为您的图片路径 */
+    width: 15px; /* 设置图片宽度 */
+    height: 15px; /* 设置图片高度 */
+}
+
+
+#stiParamWnd QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: right top; /* 或者根据您的布局需要调整位置 */
+    image: url(:/img/resource/tool/arrowUp.png); /* 替换为您的图片路径 */
+    width: 15px; /* 设置图片宽度 */
+    height: 15px; /* 设置图片高度 */
+
+}
+
+#stiParamWnd QDoubleSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: right bottom; /* 或者根据您的布局需要调整位置 */
+    image: url(:/img/resource/tool/arrowDown.png); /* 替换为您的图片路径 */
+    width: 15px; /* 设置图片宽度 */
+    height: 15px; /* 设置图片高度 */
+}
+
+
+#stiParamWnd QDoubleSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: right top; /* 或者根据您的布局需要调整位置 */
+    image: url(:/img/resource/tool/arrowUp.png); /* 替换为您的图片路径 */
+    width: 15px; /* 设置图片宽度 */
+    height: 15px; /* 设置图片高度 */
+}
+
+
+#stiParamWnd QPushButton {
+   background-color: #4A4A4A; /* 鼠标悬停时的背景色 */
+   border: 1px solid rgba(255, 255, 255, 0.3); /* 边框颜色，带透明度 */
+   border-radius: 5px; /* 圆角半径 */
+   color: #FFFFFF; /* 文字颜色 */
+   font: 14px "Microsoft YaHei"; /* 字体大小和字体族 */
+   padding: 5px 15px; /* 内边距 */
+}
+
+#stiParamWnd QPushButton:hover {
+   background-color: #383838; /* 鼠标悬停时的背景色 */
+}
+
+#stiParamWnd QPushButton:pressed {
+   background-color: #303030; /* 按下时的背景色 */
+   border: 1px solid rgba(255, 255, 255, 0.5); /* 按下时的边框颜色 */
+}
+
+
+
+
+/*处理采样区域chaParamWnd区域样式*/
+#fileListWnd QGroupBox {
+    border: 1px solid #515151; /* 设置边框线的颜色和类型 */
+    margin-top: 3ex; /* 调整标题的垂直位置 */
+    color: #cccccc;
+}
+
+#fileListWnd QGroupBox::title {
+    subcontrol-origin: margin; /* 将标题的位置相对于边框的外边距进行定位 */
+    subcontrol-position: top left; /* 标题的位置 */
+    left: 10px; /* 标题距离左边的距离 */
+    margin-left: 2px; /* 标题距离左边的外边距 */
+    padding: 0 0px; /* 标题的内边距 */
+}
+
+
+
+
+
+#fileListWnd QTextEdit {
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+}
+
+#fileListWnd QLabel {
+color:white;
+}
+
+#fileListWnd QTreeWidget{
+background-color: #383838;
+border: 1px solid #515151;
+color:white;
+}
+
+
+#fileListWnd QTreeWidget::item[open='true'] {
+    background-image: url(:/img/resource/tool/Add.png); /* 展开状态的背景图片 */
+}
+
+#fileListWnd QTreeWidget::item[closed='true'] {
+    background-image: url(:/img/resource/tool/Minus.png); /* 折叠状态的背景图片 */
+}
+
+
+#fileListWnd QHeaderView::section {
+    background-color: #383838;
+    color: #FFFFFF; /* 列标题文字颜色 */
+    border: none; /* 去除列标题边框 */
+    font-weight: bold; /* 加粗列标题文字 */
+}
+
+
+
+#fileListWnd QTextEdit {
+    color:white;
+    padding-left: 2ex;
+}
+#fileListWnd QTextEdit {
+text-align: center;
+}
+
+
+#fileListWnd #searchBtn{
+    background-color: #383838;
+}
+
+#fileListWnd #fileDirBtn{
+    background-color: #383838;
+    color:white;
+}
+
+#dataMonitorWnd{
+background: #383838;
+}
+
+#dataMonitorWnd QGroupBox{
+background: #383838;
+}
+
+
+#dataMonitorWnd QLabel{
+color:white;
+}
+
+#dataMonitorWnd #titleDataMonitorLabel{
+background: #313030;
+border: 1px solid #222222;
+border-radius: 0px 0px 2px 2px;
+}
+
+
+#dataMonitorWnd QComboBox{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+color:white;
+padding-left: 2ex;
+}
+
+
+#dataMonitorWnd  QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right center; /* 放于右方顶部 */
+    width: 15px; /* 设置按钮宽度 */
+    height: 15px; /* 设置按钮高度 */
+    border:none;
+}
+
+#dataMonitorWnd  QComboBox::down-arrow {
+    image: url(:/img/resource/tool/arrowDown.png); /* 替换为您的图片路径 */
+    width: 15px; /* 图片宽度 */
+    height: 15px; /* 图片高度 */
+}
+
+
+#dataMonitorWnd  QComboBox QAbstractItemView {
+    background-color: #383838;  /* 下拉菜单背景颜色 */
+    border: 1px solid #515151;  /* 边框颜色 */
+    color: white;               /* 文字颜色 */
+    selection-background-color: #515151; /* 选中项背景色 */
+    selection-color: white;     /* 选中项字体颜色 */
+}
+
+#dataMonitorWnd QLineEdit{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+color:white;
+padding-left: 2ex;
+}
+
+
+
+
+/*增加表格类的样式设置 此处表格内部（CTableViewBasic和CCusTableHeaderWidget
+中的单元格背景色 background-color设置之后均无效，
+会使用父窗口中的背景色(m_pWnd->setStyleSheet("background-color:  rgb(56, 56, 56);");) 表格父窗口不能使用这个设置
+CCusHeaderView表格窗口原始表头, 在css中设置表格部件的字体对齐方式不生效，需要在单元格中设置对应的字体对齐角色
+）*/
+CDataMonitorWnd CTableViewBasic{
+border: 1px solid rgb(60,60,60);
+color: rgb(255,255,255);
+/*背景色设置无效*/
+background-color:#383838;
+selection-background-color:rgb(100,100,100);
+/*代码设置双色显示setAlternatingRowColors(true);之后生效*/
+alternate-background-color:rgb(74,74,74);
+gridline-color: #515151;
+font: 9pt "Microsoft YaHei";
+
+}
+
+CDataMonitorWnd CTableViewBasic CCusTableHeaderWidget{
+border: none;
+color:rgb(250,250,250);
+background-color:#313030;
+selection-background-color:rgb(100,100,100);
+gridline-color: rgb(60,60,60);
+font: 12px "Microsoft YaHei";
+text-align: center;
+}
+
+
+
+
+
+CDataMonitorWnd CTableViewBasic CCusHeaderView{
+color:rgb(245,245,245);
+background-color:#313030;
+selection-background-color:rgb(100,100,100);
+border: 0px solid #000000;
+text-align: center;
+}
+
+
+/*鼠标悬停*/
+CDataMonitorWnd CTableViewBasic CCusHeaderView::section::hover{
+    background-color: rgb(80, 80, 80);
+}
+
+/*表格的父窗口不能直接通过样式表设置背景，会覆盖当前的背景*/
+#tableParent{
+background-color:  rgb(56, 56, 56);
+}
+
+
+
+
+
+#patchTestWnd {
+background: #383838;
+}
+
+#patchTestWnd QLabel{
+color: white;
+}
+
+#patchTestWnd #step1Label{
+color: #5aa4f0;
+}
+
+#patchTestWnd #videoBtn{
+background: linear-gradient(0deg,rgba(0,0,0,0.15) 0%), #505050;
+border: 1px solid;
+border-image: linear-gradient(0deg, #5a5a5a 0%, #646464 100%) 1 1;
+border-radius: 2px;
+}
+
+
+#patchTestWnd QTabWidget::pane {
+    border: solid 0.5px  black;  /* 内容区域的黑色细实线边框 */
+}
+
+#patchTestWnd QTabWidget::tab-bar {
+    alignment: center; /* 可选：让选项卡对齐中间 */
+    border: 0.5px  black;
+}
+
+#patchTestWnd QTabBar::tab {
+    width: 100%; /* 每个选项卡占 50% 的宽度 */
+    color: #d2d2d2;        /* 选项卡文字颜色 */
+    padding: 10px;       /* 内边距 */
+    border: 1px solid black; /* 黑色边框 */
+    background: #383838;
+}
+
+
+#patchTestWnd QTabBar::tab:selected {
+    background: #505050; /* 选中选项卡的背景色 */
+    font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+    font-weight: 400;
+    color: #5aa4f0;
+}
+
+#patchTestWnd #patchTestTitleLabel{
+background: #313030;
+border: 1px solid #222222;
+border-radius: 0px 0px 2px 2px;
+color:white;
+}
+
+
+#patchTestWnd #demonstrateBtn {
+    background-color: #4a4a4a; /* 按钮背景色 */
+    border: none; /* 无边框 */
+    border-radius: 10px; /* 圆角 */
+    color: #bababa;
+    padding: 5px; /* 内边距 */
+    text-align: left; /* 文字左对齐，以便为图标留出空间 */
+    font-size: 14px; /* 字体大小 */
+}
+
+#patchTestWnd #LJPBtn {
+    background-color: #4a4a4a; /* 按钮背景色 */
+    color: white;
+}
+
+
+#monitorWnd {
+background: #383838;
+}
+
+#monitorWnd QGroupBox{
+background: #383838;
+border: 1px solid #313030; /* 设置边框线的颜色和类型 */
+}
+
+#scrollAreaWidgetContents{
+background: #383838;
+}
+
+
+
+
+

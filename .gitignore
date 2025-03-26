@@ -1,0 +1,10 @@
+/src/ControlStiParamPlugin/.qtc_clangd
+/build
+/src/ControlStiParamPlugin/ControlStiParam/release
+/thirdparty
+*.user
+*.Debug
+*.Release
+/src/ControlStiParamPlugin/ControlStiParam/debug
+src/ControlStiParamPlugin/ControlStiParamPlugin.pro.user.f3d3439
+src/ControlStiParamPlugin/Makefile

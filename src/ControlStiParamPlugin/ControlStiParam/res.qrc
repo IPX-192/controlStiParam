@@ -1,0 +1,48 @@
+<RCC>
+    <qresource prefix="/Style">
+        <file>base.css</file>
+        <file>base_new.css</file>
+    </qresource>
+    <qresource prefix="/resource/img"/>
+    <qresource prefix="/img">
+        <file>resource/tool/Add.png</file>
+        <file>resource/tool/Minus.png</file>
+        <file>resource/tool/arrowUp.png</file>
+        <file>resource/tool/arrowDown.png</file>
+        <file>resource/tool/arrowRight.png</file>
+        <file>resource/tool/arrowLeft.png</file>
+        <file>resource/tool/StartBtnDefault.png</file>
+        <file>resource/tool/StartBtnUp.png</file>
+        <file>resource/tool/membrane testing_curArrow.png</file>
+        <file>resource/tool/membrane_testing.png</file>
+        <file>resource/tool/Time.png</file>
+        <file>resource/tool/video_CurBtn.png</file>
+        <file>resource/tool/Search.png</file>
+        <file>resource/tool/Tips.png</file>
+        <file>resource/tool/S_mall_wave1.png</file>
+        <file>resource/tool/S_mall_wave2.png</file>
+        <file>resource/tool/S_mall_wave3.png</file>
+        <file>resource/tool/S_mall_wave4.png</file>
+        <file>resource/tool/S_mall_wave5.png</file>
+        <file>resource/tool/S_mall_wave6.png</file>
+        <file>resource/tool/S_mall_wave1_new.PNG</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>resource/icon/Calendar.png</file>
+        <file>resource/icon/Double_Default.png</file>
+        <file>resource/icon/Double_Selected.png</file>
+        <file>resource/icon/Edit_Move_Default.png</file>
+        <file>resource/icon/Edit_Move_Up.png</file>
+        <file>resource/icon/Help_Video.png</file>
+        <file>resource/icon/PassWrd_Close.png</file>
+        <file>resource/icon/PassWrd_Open.png</file>
+        <file>resource/icon/Single_Default.png</file>
+        <file>resource/icon/Single_Selected.png</file>
+        <file>resource/icon/Type_Shape_Camera.png</file>
+        <file>resource/icon/Type_shape_closed.png</file>
+        <file>resource/icon/Type_Shape_Dosing.png</file>
+        <file>resource/icon/Type_Shape_Lamp.png</file>
+        <file>resource/icon/Type_shape_open.png</file>
+        <file>resource/icon/Thumbnail.JPG</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,10 @@
+
+TestControlArea QWidget{
+    background: #383838;
+    border: 1px solid #282828;
+}
+
+QGroupBox{
+
+background: #383838;
+}
