@@ -13,8 +13,8 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
+#include "CDataMonitorPanel.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -22,25 +22,26 @@ class Ui_dataMonitorWnd
 {
 public:
     QGridLayout *gridLayout;
-    QTableView *dataMonitorTableView;
+    CDataMonitorPanel *dataMonitorTableView;
 
     void setupUi(QWidget *dataMonitorWnd)
     {
         if (dataMonitorWnd->objectName().isEmpty())
             dataMonitorWnd->setObjectName(QString::fromUtf8("dataMonitorWnd"));
-        dataMonitorWnd->resize(256, 222);
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::MinimumExpanding);
+        dataMonitorWnd->resize(343, 220);
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(dataMonitorWnd->sizePolicy().hasHeightForWidth());
         dataMonitorWnd->setSizePolicy(sizePolicy);
         dataMonitorWnd->setMinimumSize(QSize(0, 0));
-        dataMonitorWnd->setMaximumSize(QSize(16777215, 232));
+        dataMonitorWnd->setMaximumSize(QSize(16777215, 220));
         gridLayout = new QGridLayout(dataMonitorWnd);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(15, 15, 15, 15);
-        dataMonitorTableView = new QTableView(dataMonitorWnd);
+        dataMonitorTableView = new CDataMonitorPanel(dataMonitorWnd);
         dataMonitorTableView->setObjectName(QString::fromUtf8("dataMonitorTableView"));
+        dataMonitorTableView->setMaximumSize(QSize(16777215, 195));
         dataMonitorTableView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
         gridLayout->addWidget(dataMonitorTableView, 0, 0, 1, 1);

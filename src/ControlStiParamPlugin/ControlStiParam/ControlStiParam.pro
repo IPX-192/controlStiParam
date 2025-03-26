@@ -36,7 +36,6 @@ SOURCES += \
     CControlWnd.cpp \
     CDataMonitorPanel.cpp \
     CDataMonitorWnd.cpp \
-    CFileListWnd.cpp \
     CMembraneTestControlArea.cpp \
     # CMonitorStatusComponent.cpp \
     CMonitorWnd.cpp \
@@ -51,7 +50,6 @@ HEADERS += \
     CControlWnd.h \
     CDataMonitorPanel.h \
     CDataMonitorWnd.h \
-    CFileListWnd.h \
     CMembraneTestControlArea.h \
     # CMonitorStatusComponent.h \
     CMonitorWnd.h \
@@ -142,7 +140,6 @@ FORMS += \
     CClampTabWidget.ui \
     CControlWnd.ui \
     CDataMonitorWnd.ui \
-    CFileListWnd.ui \
     CMembraneTestControlArea.ui \
     CMonitorWnd.ui \
     CParamWnd.ui \

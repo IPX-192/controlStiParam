@@ -5,7 +5,6 @@
 #include"CControlWnd.h"
 #include"CParamWnd.h"
 #include"CStimualteWnd.h"
-#include"CFileListWnd.h"
 #include"CDataMonitorWnd.h"
 #include"ui_CMembraneTestControlArea.h"
 
@@ -46,7 +45,6 @@ private:
     CControlWnd* m_wndControl{nullptr};
     Param* m_wndParam{nullptr};
     sampleParamArea* m_wndSampleArea{nullptr};
-    CFileListView* m_wndFileListArea{nullptr};
     CDataMonitorWnd* m_wndDataMonitor{nullptr};
     CMonitorWnd* m_wndMonitor{nullptr};
 };
