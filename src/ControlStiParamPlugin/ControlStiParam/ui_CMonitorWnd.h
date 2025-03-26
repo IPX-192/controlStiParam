@@ -15,7 +15,6 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QWidget>
 #include "CDataMonitorWnd.h"
-#include "CPatchTestWnd.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -26,7 +25,6 @@ public:
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
     CDataMonitorWnd *dataMonitorWnd;
-    CPatchTestWnd *patchTestWnd;
 
     void setupUi(QWidget *monitorWnd)
     {
@@ -47,13 +45,7 @@ public:
 
         gridLayout_2->addWidget(dataMonitorWnd, 0, 0, 1, 1);
 
-        patchTestWnd = new CPatchTestWnd(groupBox);
-        patchTestWnd->setObjectName(QString::fromUtf8("patchTestWnd"));
-
-        gridLayout_2->addWidget(patchTestWnd, 1, 0, 1, 1);
-
         gridLayout_2->setRowStretch(0, 1);
-        gridLayout_2->setRowStretch(1, 3);
 
         gridLayout->addWidget(groupBox, 0, 0, 1, 1);
 
