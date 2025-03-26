@@ -135,17 +135,6 @@ void CMembraneTestControlArea::on_full_tab_currentChanged(int index)
         ui->paramWidget=m_wndParam;
         setWidgetToFillArea(ui->full_tab->currentWidget(), ui->paramWidget);
         break;
-
-    case FILE:
-        if(nullptr == m_wndFileListArea)
-        {
-            m_wndFileListArea = new CFileListView(this);
-        }
-        this->setWindowTitle(u8"文件列表");
-        ui->fileWidget=m_wndFileListArea;
-        setWidgetToFillArea(ui->full_tab->currentWidget(), ui->fileWidget);
-        break;
-
     }
 }
 

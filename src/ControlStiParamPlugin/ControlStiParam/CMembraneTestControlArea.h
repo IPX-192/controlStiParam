@@ -21,8 +21,7 @@ class CMembraneTestControlArea : public QWidget
     enum TABAREA{
         CONTROL,
         STIMULATE,
-        PARAM,
-        FILE
+        PARAM
     };
 
 

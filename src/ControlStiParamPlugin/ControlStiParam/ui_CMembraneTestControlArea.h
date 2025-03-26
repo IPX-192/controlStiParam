@@ -13,8 +13,10 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
+#include "CDataMonitorPanel.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -28,13 +30,13 @@ public:
     QWidget *controlWidget;
     QWidget *stiWidget;
     QWidget *paramWidget;
-    QWidget *fileWidget;
+    CDataMonitorPanel *dataMonitorTableView;
 
     void setupUi(QWidget *MembraneTestControlArea)
     {
         if (MembraneTestControlArea->objectName().isEmpty())
             MembraneTestControlArea->setObjectName(QString::fromUtf8("MembraneTestControlArea"));
-        MembraneTestControlArea->resize(259, 760);
+        MembraneTestControlArea->resize(402, 760);
         MembraneTestControlArea->setLayoutDirection(Qt::LeftToRight);
         gridLayout_2 = new QGridLayout(MembraneTestControlArea);
         gridLayout_2->setSpacing(0);
@@ -59,11 +61,16 @@ public:
         paramWidget = new QWidget();
         paramWidget->setObjectName(QString::fromUtf8("paramWidget"));
         full_tab->addTab(paramWidget, QString());
-        fileWidget = new QWidget();
-        fileWidget->setObjectName(QString::fromUtf8("fileWidget"));
-        full_tab->addTab(fileWidget, QString());
 
-        gridLayout->addWidget(full_tab, 0, 0, 1, 1);
+        gridLayout->addWidget(full_tab, 1, 0, 1, 1);
+
+        dataMonitorTableView = new CDataMonitorPanel(groupBox);
+        dataMonitorTableView->setObjectName(QString::fromUtf8("dataMonitorTableView"));
+        dataMonitorTableView->setMinimumSize(QSize(0, 200));
+        dataMonitorTableView->setMaximumSize(QSize(16777215, 195));
+        dataMonitorTableView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+        gridLayout->addWidget(dataMonitorTableView, 0, 0, 1, 1);
 
 
         gridLayout_2->addWidget(groupBox, 0, 0, 1, 1);
@@ -71,7 +78,7 @@ public:
 
         retranslateUi(MembraneTestControlArea);
 
-        full_tab->setCurrentIndex(0);
+        full_tab->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MembraneTestControlArea);
@@ -84,7 +91,6 @@ public:
         full_tab->setTabText(full_tab->indexOf(controlWidget), QCoreApplication::translate("MembraneTestControlArea", "\346\216\247\345\210\266", nullptr));
         full_tab->setTabText(full_tab->indexOf(stiWidget), QCoreApplication::translate("MembraneTestControlArea", "\345\210\272\346\277\200", nullptr));
         full_tab->setTabText(full_tab->indexOf(paramWidget), QCoreApplication::translate("MembraneTestControlArea", "\345\217\202\346\225\260", nullptr));
-        full_tab->setTabText(full_tab->indexOf(fileWidget), QCoreApplication::translate("MembraneTestControlArea", "\346\226\207\344\273\266", nullptr));
     } // retranslateUi
 
 };

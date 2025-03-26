@@ -34,6 +34,7 @@ SOURCES += \
     # CControlStiParamPlugin.cpp \
     CClampTabWidget.cpp \
     CControlWnd.cpp \
+    CDataMonitorPanel.cpp \
     CDataMonitorWnd.cpp \
     CFileListWnd.cpp \
     CMembraneTestControlArea.cpp \
@@ -48,6 +49,7 @@ HEADERS += \
     # CControlStiParamPlugin.h \
     CClampTabWidget.h \
     CControlWnd.h \
+    CDataMonitorPanel.h \
     CDataMonitorWnd.h \
     CFileListWnd.h \
     CMembraneTestControlArea.h \
@@ -64,21 +66,21 @@ win32{
     DEFINES += OS_WIN
 
     #包含库目录
-    # INCLUDEPATH +=  $$PWD/../../../thirdparty/Logger
-    # INCLUDEPATH +=  $$PWD/../../../thirdparty/Common
-    # INCLUDEPATH +=  $$PWD/../../../thirdparty/Common/TableView
+    INCLUDEPATH +=  $$PWD/../../../thirdparty/Logger
+    INCLUDEPATH +=  $$PWD/../../../thirdparty/Common
+    INCLUDEPATH +=  $$PWD/../../../thirdparty/Common/TableView
 
     CONFIG(debug, debug|release){
         contains(QT_ARCH, i386) {
 
             #配置三方库目录
-            # LIBS += -L$$PWD/../../../thirdparty/lib/Debug -lglog
-            # LIBS += -L$$PWD/../../../thirdparty/lib/Debug -lCommond
+            LIBS += -L$$PWD/../../../thirdparty/lib/Debug -lglog
+            LIBS += -L$$PWD/../../../thirdparty/lib/Debug -lCommond
         } else {
 
             #配置三方库目录
-            # LIBS += -L$$PWD/../../../thirdparty/lib/Debug -lglog
-            # LIBS += -L$$PWD/../../../thirdparty/lib/Debug -lCommond
+            LIBS += -L$$PWD/../../../thirdparty/lib/Debug -lglog
+            LIBS += -L$$PWD/../../../thirdparty/lib/Debug -lCommond
         }
     } else {
         contains(QT_ARCH, i386) {

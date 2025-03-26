@@ -16,8 +16,11 @@ public:
     ~CDataMonitorWnd();
 
 public:
-    void setHeaderText(const int &row, const int &col, const QVector<QString> &vecConetent);
+    void setHeaderText(const int &row, const int &col, const QVector<QString> &vecConetent, bool bHorizontal);
+
     void setText(const int &row, const int &col, const QVector<QVector<QString> > &vecData);
+
+protected:
 
 private:
     Ui::dataMonitorWnd *ui;

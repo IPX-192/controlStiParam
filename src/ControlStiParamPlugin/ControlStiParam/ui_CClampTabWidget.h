@@ -11,8 +11,10 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDoubleSpinBox>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
@@ -20,6 +22,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,16 +30,10 @@ QT_BEGIN_NAMESPACE
 class Ui_CClampTabWidget
 {
 public:
-    QGridLayout *gridLayout_13;
+    QVBoxLayout *verticalLayout_3;
     QTabWidget *clampWidget;
     QWidget *volTab;
-    QGridLayout *gridLayout_6;
-    QGroupBox *offsetGroupBox;
-    QGridLayout *gridLayout_3;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *offsetLabel;
-    QDoubleSpinBox *offsetSpinBox;
-    QPushButton *autoBtn1;
+    QVBoxLayout *verticalLayout_5;
     QGroupBox *basicParamGroupBox;
     QGridLayout *gridLayout_2;
     QHBoxLayout *horizontalLayout;
@@ -45,8 +42,17 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QLabel *v_memLabel;
     QDoubleSpinBox *vMimDoubleSpinBox;
+    QFrame *offsetFrame;
+    QVBoxLayout *verticalLayout_4;
+    QHBoxLayout *horizontalLayout_6;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *offsetLabel;
+    QDoubleSpinBox *offsetSpinBox;
+    QPushButton *autoBtn1;
     QGroupBox *cFastGrouBox;
-    QGridLayout *gridLayout_4;
+    QHBoxLayout *horizontalLayout_19;
+    QHBoxLayout *horizontalLayout_17;
+    QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_4;
     QLabel *MagLabel;
     QDoubleSpinBox *magSpinBox;
@@ -55,16 +61,22 @@ public:
     QDoubleSpinBox *TauSpinBox;
     QPushButton *autoBtn2;
     QGroupBox *cSlowGroupBox;
-    QGridLayout *gridLayout_5;
-    QHBoxLayout *horizontalLayout_7;
+    QHBoxLayout *horizontalLayout_21;
+    QCheckBox *checkBox_2;
+    QHBoxLayout *horizontalLayout_18;
+    QVBoxLayout *verticalLayout_2;
+    QHBoxLayout *horizontalLayout_8;
     QLabel *label_2;
     QSpinBox *cmSpinBox;
-    QHBoxLayout *horizontalLayout_8;
+    QHBoxLayout *horizontalLayout_7;
     QLabel *rs_label;
     QDoubleSpinBox *rsSpinBox;
     QPushButton *autoBtn3;
-    QGroupBox *groupBox_3;
-    QGridLayout *gridLayout;
+    QFrame *RsFrame;
+    QHBoxLayout *horizontalLayout_22;
+    QHBoxLayout *horizontalLayout_11;
+    QCheckBox *checkBox;
+    QHBoxLayout *horizontalLayout_10;
     QHBoxLayout *horizontalLayout_9;
     QLabel *label_6;
     QSpinBox *spinBox_2;
@@ -102,78 +114,33 @@ public:
     {
         if (CClampTabWidget->objectName().isEmpty())
             CClampTabWidget->setObjectName(QString::fromUtf8("CClampTabWidget"));
-        CClampTabWidget->resize(256, 914);
-        gridLayout_13 = new QGridLayout(CClampTabWidget);
-        gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
-        gridLayout_13->setContentsMargins(-1, 20, -1, -1);
+        CClampTabWidget->resize(428, 754);
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(CClampTabWidget->sizePolicy().hasHeightForWidth());
+        CClampTabWidget->setSizePolicy(sizePolicy);
+        verticalLayout_3 = new QVBoxLayout(CClampTabWidget);
+        verticalLayout_3->setSpacing(0);
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
         clampWidget = new QTabWidget(CClampTabWidget);
         clampWidget->setObjectName(QString::fromUtf8("clampWidget"));
         volTab = new QWidget();
         volTab->setObjectName(QString::fromUtf8("volTab"));
-        gridLayout_6 = new QGridLayout(volTab);
-        gridLayout_6->setObjectName(QString::fromUtf8("gridLayout_6"));
-        gridLayout_6->setVerticalSpacing(20);
-        offsetGroupBox = new QGroupBox(volTab);
-        offsetGroupBox->setObjectName(QString::fromUtf8("offsetGroupBox"));
-        offsetGroupBox->setMaximumSize(QSize(16777215, 100));
-        gridLayout_3 = new QGridLayout(offsetGroupBox);
-        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        gridLayout_3->setVerticalSpacing(10);
-        gridLayout_3->setContentsMargins(10, 15, 10, 10);
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setSpacing(10);
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        offsetLabel = new QLabel(offsetGroupBox);
-        offsetLabel->setObjectName(QString::fromUtf8("offsetLabel"));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(offsetLabel->sizePolicy().hasHeightForWidth());
-        offsetLabel->setSizePolicy(sizePolicy);
-        QFont font;
-        font.setPointSize(10);
-        offsetLabel->setFont(font);
-        offsetLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-
-        horizontalLayout_3->addWidget(offsetLabel);
-
-        offsetSpinBox = new QDoubleSpinBox(offsetGroupBox);
-        offsetSpinBox->setObjectName(QString::fromUtf8("offsetSpinBox"));
-        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Expanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(offsetSpinBox->sizePolicy().hasHeightForWidth());
-        offsetSpinBox->setSizePolicy(sizePolicy1);
-        offsetSpinBox->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        offsetSpinBox->setDecimals(1);
-
-        horizontalLayout_3->addWidget(offsetSpinBox);
-
-        horizontalLayout_3->setStretch(0, 1);
-        horizontalLayout_3->setStretch(1, 2);
-
-        gridLayout_3->addLayout(horizontalLayout_3, 0, 0, 1, 1);
-
-        autoBtn1 = new QPushButton(offsetGroupBox);
-        autoBtn1->setObjectName(QString::fromUtf8("autoBtn1"));
-        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(autoBtn1->sizePolicy().hasHeightForWidth());
-        autoBtn1->setSizePolicy(sizePolicy2);
-        autoBtn1->setFont(font);
-        autoBtn1->setStyleSheet(QString::fromUtf8(""));
-
-        gridLayout_3->addWidget(autoBtn1, 1, 0, 1, 1);
-
-
-        gridLayout_6->addWidget(offsetGroupBox, 1, 0, 1, 1);
-
+        sizePolicy.setHeightForWidth(volTab->sizePolicy().hasHeightForWidth());
+        volTab->setSizePolicy(sizePolicy);
+        verticalLayout_5 = new QVBoxLayout(volTab);
+        verticalLayout_5->setSpacing(0);
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        verticalLayout_5->setContentsMargins(20, 0, 20, 0);
         basicParamGroupBox = new QGroupBox(volTab);
         basicParamGroupBox->setObjectName(QString::fromUtf8("basicParamGroupBox"));
-        sizePolicy2.setHeightForWidth(basicParamGroupBox->sizePolicy().hasHeightForWidth());
-        basicParamGroupBox->setSizePolicy(sizePolicy2);
-        basicParamGroupBox->setMaximumSize(QSize(16777215, 112));
+        sizePolicy.setHeightForWidth(basicParamGroupBox->sizePolicy().hasHeightForWidth());
+        basicParamGroupBox->setSizePolicy(sizePolicy);
+        basicParamGroupBox->setMaximumSize(QSize(16777215, 16777215));
+        QFont font;
+        font.setPointSize(10);
         basicParamGroupBox->setFont(font);
         basicParamGroupBox->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         gridLayout_2 = new QGridLayout(basicParamGroupBox);
@@ -188,6 +155,7 @@ public:
         mode->setObjectName(QString::fromUtf8("mode"));
         sizePolicy.setHeightForWidth(mode->sizePolicy().hasHeightForWidth());
         mode->setSizePolicy(sizePolicy);
+        mode->setMinimumSize(QSize(80, 0));
         mode->setFont(font);
         mode->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
@@ -196,11 +164,9 @@ public:
         cellComboBox = new QComboBox(basicParamGroupBox);
         cellComboBox->addItem(QString());
         cellComboBox->setObjectName(QString::fromUtf8("cellComboBox"));
-        QSizePolicy sizePolicy3(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(cellComboBox->sizePolicy().hasHeightForWidth());
-        cellComboBox->setSizePolicy(sizePolicy3);
+        sizePolicy.setHeightForWidth(cellComboBox->sizePolicy().hasHeightForWidth());
+        cellComboBox->setSizePolicy(sizePolicy);
+        cellComboBox->setMinimumSize(QSize(122, 35));
         cellComboBox->setCursor(QCursor(Qt::ArrowCursor));
 
         horizontalLayout->addWidget(cellComboBox);
@@ -217,6 +183,7 @@ public:
         v_memLabel->setObjectName(QString::fromUtf8("v_memLabel"));
         sizePolicy.setHeightForWidth(v_memLabel->sizePolicy().hasHeightForWidth());
         v_memLabel->setSizePolicy(sizePolicy);
+        v_memLabel->setMinimumSize(QSize(80, 0));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Microsoft YaHei UI Light"));
         font1.setPointSize(10);
@@ -227,11 +194,9 @@ public:
 
         vMimDoubleSpinBox = new QDoubleSpinBox(basicParamGroupBox);
         vMimDoubleSpinBox->setObjectName(QString::fromUtf8("vMimDoubleSpinBox"));
-        QSizePolicy sizePolicy4(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
-        sizePolicy4.setHorizontalStretch(0);
-        sizePolicy4.setVerticalStretch(0);
-        sizePolicy4.setHeightForWidth(vMimDoubleSpinBox->sizePolicy().hasHeightForWidth());
-        vMimDoubleSpinBox->setSizePolicy(sizePolicy4);
+        sizePolicy.setHeightForWidth(vMimDoubleSpinBox->sizePolicy().hasHeightForWidth());
+        vMimDoubleSpinBox->setSizePolicy(sizePolicy);
+        vMimDoubleSpinBox->setMinimumSize(QSize(122, 35));
         vMimDoubleSpinBox->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         vMimDoubleSpinBox->setValue(1.000000000000000);
 
@@ -245,186 +210,309 @@ public:
         gridLayout_2->setRowStretch(0, 1);
         gridLayout_2->setRowStretch(1, 1);
 
-        gridLayout_6->addWidget(basicParamGroupBox, 0, 0, 1, 1);
+        verticalLayout_5->addWidget(basicParamGroupBox);
+
+        offsetFrame = new QFrame(volTab);
+        offsetFrame->setObjectName(QString::fromUtf8("offsetFrame"));
+        offsetFrame->setMinimumSize(QSize(0, 70));
+        offsetFrame->setMaximumSize(QSize(16777215, 70));
+        verticalLayout_4 = new QVBoxLayout(offsetFrame);
+        verticalLayout_4->setSpacing(0);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        verticalLayout_4->setContentsMargins(16, 16, 16, 16);
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setSpacing(0);
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(0);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(-1, -1, 30, -1);
+        offsetLabel = new QLabel(offsetFrame);
+        offsetLabel->setObjectName(QString::fromUtf8("offsetLabel"));
+        sizePolicy.setHeightForWidth(offsetLabel->sizePolicy().hasHeightForWidth());
+        offsetLabel->setSizePolicy(sizePolicy);
+        offsetLabel->setMinimumSize(QSize(80, 0));
+        offsetLabel->setFont(font);
+        offsetLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+
+        horizontalLayout_3->addWidget(offsetLabel);
+
+        offsetSpinBox = new QDoubleSpinBox(offsetFrame);
+        offsetSpinBox->setObjectName(QString::fromUtf8("offsetSpinBox"));
+        sizePolicy.setHeightForWidth(offsetSpinBox->sizePolicy().hasHeightForWidth());
+        offsetSpinBox->setSizePolicy(sizePolicy);
+        offsetSpinBox->setMinimumSize(QSize(122, 35));
+        offsetSpinBox->setMaximumSize(QSize(16777215, 16777215));
+        offsetSpinBox->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        offsetSpinBox->setDecimals(1);
+
+        horizontalLayout_3->addWidget(offsetSpinBox);
+
+
+        horizontalLayout_6->addLayout(horizontalLayout_3);
+
+        autoBtn1 = new QPushButton(offsetFrame);
+        autoBtn1->setObjectName(QString::fromUtf8("autoBtn1"));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(autoBtn1->sizePolicy().hasHeightForWidth());
+        autoBtn1->setSizePolicy(sizePolicy1);
+        autoBtn1->setMinimumSize(QSize(70, 30));
+        autoBtn1->setMaximumSize(QSize(70, 30));
+        autoBtn1->setFont(font);
+        autoBtn1->setStyleSheet(QString::fromUtf8(""));
+
+        horizontalLayout_6->addWidget(autoBtn1);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_6);
+
+
+        verticalLayout_5->addWidget(offsetFrame);
 
         cFastGrouBox = new QGroupBox(volTab);
         cFastGrouBox->setObjectName(QString::fromUtf8("cFastGrouBox"));
-        cFastGrouBox->setMaximumSize(QSize(16777215, 152));
+        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(cFastGrouBox->sizePolicy().hasHeightForWidth());
+        cFastGrouBox->setSizePolicy(sizePolicy2);
+        cFastGrouBox->setMaximumSize(QSize(16777215, 16777215));
         cFastGrouBox->setFont(font);
-        gridLayout_4 = new QGridLayout(cFastGrouBox);
-        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        gridLayout_4->setVerticalSpacing(10);
-        gridLayout_4->setContentsMargins(10, 15, 10, 10);
+        horizontalLayout_19 = new QHBoxLayout(cFastGrouBox);
+        horizontalLayout_19->setSpacing(0);
+        horizontalLayout_19->setObjectName(QString::fromUtf8("horizontalLayout_19"));
+        horizontalLayout_19->setContentsMargins(16, 10, 16, 10);
+        horizontalLayout_17 = new QHBoxLayout();
+        horizontalLayout_17->setObjectName(QString::fromUtf8("horizontalLayout_17"));
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(10);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setContentsMargins(-1, -1, 0, -1);
         horizontalLayout_4 = new QHBoxLayout();
-        horizontalLayout_4->setSpacing(10);
+        horizontalLayout_4->setSpacing(0);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(-1, -1, 30, -1);
         MagLabel = new QLabel(cFastGrouBox);
         MagLabel->setObjectName(QString::fromUtf8("MagLabel"));
-        QSizePolicy sizePolicy5(QSizePolicy::Expanding, QSizePolicy::Preferred);
-        sizePolicy5.setHorizontalStretch(0);
-        sizePolicy5.setVerticalStretch(0);
-        sizePolicy5.setHeightForWidth(MagLabel->sizePolicy().hasHeightForWidth());
-        MagLabel->setSizePolicy(sizePolicy5);
+        sizePolicy.setHeightForWidth(MagLabel->sizePolicy().hasHeightForWidth());
+        MagLabel->setSizePolicy(sizePolicy);
+        MagLabel->setMinimumSize(QSize(80, 0));
         MagLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         horizontalLayout_4->addWidget(MagLabel);
 
         magSpinBox = new QDoubleSpinBox(cFastGrouBox);
         magSpinBox->setObjectName(QString::fromUtf8("magSpinBox"));
-        sizePolicy1.setHeightForWidth(magSpinBox->sizePolicy().hasHeightForWidth());
-        magSpinBox->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(magSpinBox->sizePolicy().hasHeightForWidth());
+        magSpinBox->setSizePolicy(sizePolicy);
+        magSpinBox->setMinimumSize(QSize(122, 35));
+        magSpinBox->setMaximumSize(QSize(16777215, 16777215));
         magSpinBox->setDecimals(1);
 
         horizontalLayout_4->addWidget(magSpinBox);
 
-        horizontalLayout_4->setStretch(0, 1);
-        horizontalLayout_4->setStretch(1, 2);
 
-        gridLayout_4->addLayout(horizontalLayout_4, 0, 0, 1, 1);
+        verticalLayout->addLayout(horizontalLayout_4);
 
         horizontalLayout_5 = new QHBoxLayout();
-        horizontalLayout_5->setSpacing(10);
+        horizontalLayout_5->setSpacing(0);
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        horizontalLayout_5->setContentsMargins(-1, -1, 30, -1);
         TauLabel = new QLabel(cFastGrouBox);
         TauLabel->setObjectName(QString::fromUtf8("TauLabel"));
         sizePolicy.setHeightForWidth(TauLabel->sizePolicy().hasHeightForWidth());
         TauLabel->setSizePolicy(sizePolicy);
+        TauLabel->setMinimumSize(QSize(80, 0));
         TauLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         horizontalLayout_5->addWidget(TauLabel);
 
         TauSpinBox = new QDoubleSpinBox(cFastGrouBox);
         TauSpinBox->setObjectName(QString::fromUtf8("TauSpinBox"));
-        sizePolicy1.setHeightForWidth(TauSpinBox->sizePolicy().hasHeightForWidth());
-        TauSpinBox->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(TauSpinBox->sizePolicy().hasHeightForWidth());
+        TauSpinBox->setSizePolicy(sizePolicy);
+        TauSpinBox->setMinimumSize(QSize(122, 35));
+        TauSpinBox->setMaximumSize(QSize(16777215, 16777215));
         TauSpinBox->setDecimals(1);
 
         horizontalLayout_5->addWidget(TauSpinBox);
 
-        horizontalLayout_5->setStretch(0, 1);
-        horizontalLayout_5->setStretch(1, 2);
 
-        gridLayout_4->addLayout(horizontalLayout_5, 1, 0, 1, 1);
+        verticalLayout->addLayout(horizontalLayout_5);
+
+
+        horizontalLayout_17->addLayout(verticalLayout);
 
         autoBtn2 = new QPushButton(cFastGrouBox);
         autoBtn2->setObjectName(QString::fromUtf8("autoBtn2"));
-        sizePolicy2.setHeightForWidth(autoBtn2->sizePolicy().hasHeightForWidth());
-        autoBtn2->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(autoBtn2->sizePolicy().hasHeightForWidth());
+        autoBtn2->setSizePolicy(sizePolicy1);
+        autoBtn2->setMinimumSize(QSize(70, 30));
+        autoBtn2->setMaximumSize(QSize(70, 30));
 
-        gridLayout_4->addWidget(autoBtn2, 2, 0, 1, 1);
+        horizontalLayout_17->addWidget(autoBtn2);
 
 
-        gridLayout_6->addWidget(cFastGrouBox, 2, 0, 1, 1);
+        horizontalLayout_19->addLayout(horizontalLayout_17);
+
+
+        verticalLayout_5->addWidget(cFastGrouBox);
 
         cSlowGroupBox = new QGroupBox(volTab);
         cSlowGroupBox->setObjectName(QString::fromUtf8("cSlowGroupBox"));
-        cSlowGroupBox->setMaximumSize(QSize(16777215, 151));
+        sizePolicy.setHeightForWidth(cSlowGroupBox->sizePolicy().hasHeightForWidth());
+        cSlowGroupBox->setSizePolicy(sizePolicy);
+        cSlowGroupBox->setMaximumSize(QSize(16777215, 16777215));
         cSlowGroupBox->setFont(font);
-        gridLayout_5 = new QGridLayout(cSlowGroupBox);
-        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
-        gridLayout_5->setVerticalSpacing(10);
-        gridLayout_5->setContentsMargins(10, 15, 10, 10);
-        horizontalLayout_7 = new QHBoxLayout();
-        horizontalLayout_7->setSpacing(10);
-        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
+        horizontalLayout_21 = new QHBoxLayout(cSlowGroupBox);
+        horizontalLayout_21->setObjectName(QString::fromUtf8("horizontalLayout_21"));
+        horizontalLayout_21->setContentsMargins(10, 10, 10, 10);
+        checkBox_2 = new QCheckBox(cSlowGroupBox);
+        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
+
+        horizontalLayout_21->addWidget(checkBox_2);
+
+        horizontalLayout_18 = new QHBoxLayout();
+        horizontalLayout_18->setObjectName(QString::fromUtf8("horizontalLayout_18"));
+        horizontalLayout_18->setContentsMargins(-1, -1, 0, -1);
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setSpacing(0);
+        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
+        horizontalLayout_8->setContentsMargins(-1, -1, 30, -1);
         label_2 = new QLabel(cSlowGroupBox);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         sizePolicy.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
         label_2->setSizePolicy(sizePolicy);
+        label_2->setMinimumSize(QSize(50, 0));
         label_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        horizontalLayout_7->addWidget(label_2);
+        horizontalLayout_8->addWidget(label_2);
 
         cmSpinBox = new QSpinBox(cSlowGroupBox);
         cmSpinBox->setObjectName(QString::fromUtf8("cmSpinBox"));
-        sizePolicy1.setHeightForWidth(cmSpinBox->sizePolicy().hasHeightForWidth());
-        cmSpinBox->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(cmSpinBox->sizePolicy().hasHeightForWidth());
+        cmSpinBox->setSizePolicy(sizePolicy);
+        cmSpinBox->setMinimumSize(QSize(122, 35));
+        cmSpinBox->setMaximumSize(QSize(16777215, 16777215));
         cmSpinBox->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        horizontalLayout_7->addWidget(cmSpinBox);
+        horizontalLayout_8->addWidget(cmSpinBox);
 
-        horizontalLayout_7->setStretch(0, 1);
-        horizontalLayout_7->setStretch(1, 2);
 
-        gridLayout_5->addLayout(horizontalLayout_7, 0, 0, 1, 1);
+        verticalLayout_2->addLayout(horizontalLayout_8);
 
-        horizontalLayout_8 = new QHBoxLayout();
-        horizontalLayout_8->setSpacing(10);
-        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setSpacing(0);
+        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
+        horizontalLayout_7->setContentsMargins(-1, -1, 30, -1);
         rs_label = new QLabel(cSlowGroupBox);
         rs_label->setObjectName(QString::fromUtf8("rs_label"));
-        sizePolicy2.setHeightForWidth(rs_label->sizePolicy().hasHeightForWidth());
-        rs_label->setSizePolicy(sizePolicy2);
+        sizePolicy.setHeightForWidth(rs_label->sizePolicy().hasHeightForWidth());
+        rs_label->setSizePolicy(sizePolicy);
+        rs_label->setMinimumSize(QSize(50, 0));
         rs_label->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        horizontalLayout_8->addWidget(rs_label);
+        horizontalLayout_7->addWidget(rs_label);
 
         rsSpinBox = new QDoubleSpinBox(cSlowGroupBox);
         rsSpinBox->setObjectName(QString::fromUtf8("rsSpinBox"));
-        sizePolicy1.setHeightForWidth(rsSpinBox->sizePolicy().hasHeightForWidth());
-        rsSpinBox->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(rsSpinBox->sizePolicy().hasHeightForWidth());
+        rsSpinBox->setSizePolicy(sizePolicy);
+        rsSpinBox->setMinimumSize(QSize(122, 35));
+        rsSpinBox->setMaximumSize(QSize(16777215, 16777215));
         rsSpinBox->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         rsSpinBox->setDecimals(1);
 
-        horizontalLayout_8->addWidget(rsSpinBox);
+        horizontalLayout_7->addWidget(rsSpinBox);
 
-        horizontalLayout_8->setStretch(0, 1);
-        horizontalLayout_8->setStretch(1, 2);
 
-        gridLayout_5->addLayout(horizontalLayout_8, 1, 0, 1, 1);
+        verticalLayout_2->addLayout(horizontalLayout_7);
+
+
+        horizontalLayout_18->addLayout(verticalLayout_2);
 
         autoBtn3 = new QPushButton(cSlowGroupBox);
         autoBtn3->setObjectName(QString::fromUtf8("autoBtn3"));
-        sizePolicy2.setHeightForWidth(autoBtn3->sizePolicy().hasHeightForWidth());
-        autoBtn3->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(autoBtn3->sizePolicy().hasHeightForWidth());
+        autoBtn3->setSizePolicy(sizePolicy1);
+        autoBtn3->setMinimumSize(QSize(70, 30));
+        autoBtn3->setMaximumSize(QSize(70, 30));
 
-        gridLayout_5->addWidget(autoBtn3, 2, 0, 1, 1);
+        horizontalLayout_18->addWidget(autoBtn3);
 
 
-        gridLayout_6->addWidget(cSlowGroupBox, 3, 0, 1, 1);
+        horizontalLayout_21->addLayout(horizontalLayout_18);
 
-        groupBox_3 = new QGroupBox(volTab);
-        groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setMaximumSize(QSize(16777215, 100));
-        groupBox_3->setFont(font);
-        gridLayout = new QGridLayout(groupBox_3);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        gridLayout->setVerticalSpacing(15);
+
+        verticalLayout_5->addWidget(cSlowGroupBox);
+
+        RsFrame = new QFrame(volTab);
+        RsFrame->setObjectName(QString::fromUtf8("RsFrame"));
+        sizePolicy.setHeightForWidth(RsFrame->sizePolicy().hasHeightForWidth());
+        RsFrame->setSizePolicy(sizePolicy);
+        RsFrame->setMaximumSize(QSize(16777215, 16777215));
+        RsFrame->setFont(font);
+        horizontalLayout_22 = new QHBoxLayout(RsFrame);
+        horizontalLayout_22->setObjectName(QString::fromUtf8("horizontalLayout_22"));
+        horizontalLayout_22->setContentsMargins(10, -1, -1, -1);
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setObjectName(QString::fromUtf8("horizontalLayout_11"));
+        checkBox = new QCheckBox(RsFrame);
+        checkBox->setObjectName(QString::fromUtf8("checkBox"));
+
+        horizontalLayout_11->addWidget(checkBox);
+
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
         horizontalLayout_9 = new QHBoxLayout();
-        horizontalLayout_9->setSpacing(10);
+        horizontalLayout_9->setSpacing(0);
         horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
-        label_6 = new QLabel(groupBox_3);
+        horizontalLayout_9->setContentsMargins(-1, -1, 30, -1);
+        label_6 = new QLabel(RsFrame);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        sizePolicy5.setHeightForWidth(label_6->sizePolicy().hasHeightForWidth());
-        label_6->setSizePolicy(sizePolicy5);
+        sizePolicy.setHeightForWidth(label_6->sizePolicy().hasHeightForWidth());
+        label_6->setSizePolicy(sizePolicy);
+        label_6->setMinimumSize(QSize(50, 0));
         label_6->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         horizontalLayout_9->addWidget(label_6);
 
-        spinBox_2 = new QSpinBox(groupBox_3);
+        spinBox_2 = new QSpinBox(RsFrame);
         spinBox_2->setObjectName(QString::fromUtf8("spinBox_2"));
-        sizePolicy1.setHeightForWidth(spinBox_2->sizePolicy().hasHeightForWidth());
-        spinBox_2->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Expanding);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(spinBox_2->sizePolicy().hasHeightForWidth());
+        spinBox_2->setSizePolicy(sizePolicy3);
+        spinBox_2->setMinimumSize(QSize(122, 35));
+        spinBox_2->setMaximumSize(QSize(122, 35));
 
         horizontalLayout_9->addWidget(spinBox_2);
 
-        horizontalLayout_9->setStretch(0, 1);
-        horizontalLayout_9->setStretch(1, 2);
 
-        gridLayout->addLayout(horizontalLayout_9, 0, 0, 1, 1);
+        horizontalLayout_10->addLayout(horizontalLayout_9);
 
-        pushButton = new QPushButton(groupBox_3);
+        pushButton = new QPushButton(RsFrame);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
         pushButton->setSizePolicy(sizePolicy);
-        pushButton->setMaximumSize(QSize(16777215, 30));
+        pushButton->setMinimumSize(QSize(70, 30));
+        pushButton->setMaximumSize(QSize(70, 30));
 
-        gridLayout->addWidget(pushButton, 1, 0, 1, 1);
+        horizontalLayout_10->addWidget(pushButton);
 
-        gridLayout->setRowStretch(0, 1);
-        gridLayout->setRowStretch(1, 1);
 
-        gridLayout_6->addWidget(groupBox_3, 4, 0, 1, 1);
+        horizontalLayout_11->addLayout(horizontalLayout_10);
+
+
+        horizontalLayout_22->addLayout(horizontalLayout_11);
+
+
+        verticalLayout_5->addWidget(RsFrame);
 
         clampWidget->addTab(volTab, QString());
         curTab = new QWidget();
@@ -435,8 +523,8 @@ public:
         gridLayout_7->setContentsMargins(-1, -1, -1, 200);
         basicParamGroupBox_2 = new QGroupBox(curTab);
         basicParamGroupBox_2->setObjectName(QString::fromUtf8("basicParamGroupBox_2"));
-        sizePolicy2.setHeightForWidth(basicParamGroupBox_2->sizePolicy().hasHeightForWidth());
-        basicParamGroupBox_2->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(basicParamGroupBox_2->sizePolicy().hasHeightForWidth());
+        basicParamGroupBox_2->setSizePolicy(sizePolicy1);
         basicParamGroupBox_2->setMaximumSize(QSize(16777215, 135));
         basicParamGroupBox_2->setFont(font);
         basicParamGroupBox_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
@@ -460,8 +548,11 @@ public:
         cellComboBox_2 = new QComboBox(basicParamGroupBox_2);
         cellComboBox_2->addItem(QString());
         cellComboBox_2->setObjectName(QString::fromUtf8("cellComboBox_2"));
-        sizePolicy3.setHeightForWidth(cellComboBox_2->sizePolicy().hasHeightForWidth());
-        cellComboBox_2->setSizePolicy(sizePolicy3);
+        QSizePolicy sizePolicy4(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(cellComboBox_2->sizePolicy().hasHeightForWidth());
+        cellComboBox_2->setSizePolicy(sizePolicy4);
         cellComboBox_2->setCursor(QCursor(Qt::ArrowCursor));
 
         horizontalLayout_12->addWidget(cellComboBox_2);
@@ -485,8 +576,11 @@ public:
 
         vMimDoubleSpinBox_2 = new QDoubleSpinBox(basicParamGroupBox_2);
         vMimDoubleSpinBox_2->setObjectName(QString::fromUtf8("vMimDoubleSpinBox_2"));
-        sizePolicy4.setHeightForWidth(vMimDoubleSpinBox_2->sizePolicy().hasHeightForWidth());
-        vMimDoubleSpinBox_2->setSizePolicy(sizePolicy4);
+        QSizePolicy sizePolicy5(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+        sizePolicy5.setHorizontalStretch(0);
+        sizePolicy5.setVerticalStretch(0);
+        sizePolicy5.setHeightForWidth(vMimDoubleSpinBox_2->sizePolicy().hasHeightForWidth());
+        vMimDoubleSpinBox_2->setSizePolicy(sizePolicy5);
         vMimDoubleSpinBox_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         vMimDoubleSpinBox_2->setValue(1.000000000000000);
 
@@ -523,8 +617,8 @@ public:
 
         offsetSpinBox_4 = new QDoubleSpinBox(offsetGroupBox_4);
         offsetSpinBox_4->setObjectName(QString::fromUtf8("offsetSpinBox_4"));
-        sizePolicy1.setHeightForWidth(offsetSpinBox_4->sizePolicy().hasHeightForWidth());
-        offsetSpinBox_4->setSizePolicy(sizePolicy1);
+        sizePolicy3.setHeightForWidth(offsetSpinBox_4->sizePolicy().hasHeightForWidth());
+        offsetSpinBox_4->setSizePolicy(sizePolicy3);
         offsetSpinBox_4->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         offsetSpinBox_4->setDecimals(1);
 
@@ -537,8 +631,8 @@ public:
 
         autoBtn1_4 = new QPushButton(offsetGroupBox_4);
         autoBtn1_4->setObjectName(QString::fromUtf8("autoBtn1_4"));
-        sizePolicy2.setHeightForWidth(autoBtn1_4->sizePolicy().hasHeightForWidth());
-        autoBtn1_4->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(autoBtn1_4->sizePolicy().hasHeightForWidth());
+        autoBtn1_4->setSizePolicy(sizePolicy1);
         autoBtn1_4->setFont(font);
         autoBtn1_4->setStyleSheet(QString::fromUtf8(""));
 
@@ -568,8 +662,8 @@ public:
 
         offsetSpinBox_3 = new QDoubleSpinBox(offsetGroupBox_3);
         offsetSpinBox_3->setObjectName(QString::fromUtf8("offsetSpinBox_3"));
-        sizePolicy1.setHeightForWidth(offsetSpinBox_3->sizePolicy().hasHeightForWidth());
-        offsetSpinBox_3->setSizePolicy(sizePolicy1);
+        sizePolicy3.setHeightForWidth(offsetSpinBox_3->sizePolicy().hasHeightForWidth());
+        offsetSpinBox_3->setSizePolicy(sizePolicy3);
         offsetSpinBox_3->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         offsetSpinBox_3->setDecimals(1);
 
@@ -582,8 +676,8 @@ public:
 
         autoBtn1_3 = new QPushButton(offsetGroupBox_3);
         autoBtn1_3->setObjectName(QString::fromUtf8("autoBtn1_3"));
-        sizePolicy2.setHeightForWidth(autoBtn1_3->sizePolicy().hasHeightForWidth());
-        autoBtn1_3->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(autoBtn1_3->sizePolicy().hasHeightForWidth());
+        autoBtn1_3->setSizePolicy(sizePolicy1);
         autoBtn1_3->setFont(font);
         autoBtn1_3->setStyleSheet(QString::fromUtf8(""));
 
@@ -601,8 +695,8 @@ public:
         gridLayout_9->setContentsMargins(10, 15, 10, 10);
         autoBtn1_2 = new QPushButton(offsetGroupBox_2);
         autoBtn1_2->setObjectName(QString::fromUtf8("autoBtn1_2"));
-        sizePolicy2.setHeightForWidth(autoBtn1_2->sizePolicy().hasHeightForWidth());
-        autoBtn1_2->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(autoBtn1_2->sizePolicy().hasHeightForWidth());
+        autoBtn1_2->setSizePolicy(sizePolicy1);
         autoBtn1_2->setFont(font);
         autoBtn1_2->setStyleSheet(QString::fromUtf8(""));
 
@@ -622,8 +716,8 @@ public:
 
         offsetSpinBox_2 = new QDoubleSpinBox(offsetGroupBox_2);
         offsetSpinBox_2->setObjectName(QString::fromUtf8("offsetSpinBox_2"));
-        sizePolicy1.setHeightForWidth(offsetSpinBox_2->sizePolicy().hasHeightForWidth());
-        offsetSpinBox_2->setSizePolicy(sizePolicy1);
+        sizePolicy3.setHeightForWidth(offsetSpinBox_2->sizePolicy().hasHeightForWidth());
+        offsetSpinBox_2->setSizePolicy(sizePolicy3);
         offsetSpinBox_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         offsetSpinBox_2->setDecimals(1);
 
@@ -639,7 +733,7 @@ public:
 
         clampWidget->addTab(curTab, QString());
 
-        gridLayout_13->addWidget(clampWidget, 0, 0, 1, 1);
+        verticalLayout_3->addWidget(clampWidget);
 
 
         retranslateUi(CClampTabWidget);
@@ -653,11 +747,6 @@ public:
     void retranslateUi(QWidget *CClampTabWidget)
     {
         CClampTabWidget->setWindowTitle(QCoreApplication::translate("CClampTabWidget", "Form", nullptr));
-        offsetGroupBox->setTitle(QString());
-        offsetLabel->setText(QCoreApplication::translate("CClampTabWidget", "Offset", nullptr));
-        offsetSpinBox->setPrefix(QString());
-        offsetSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " mv", nullptr));
-        autoBtn1->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
         basicParamGroupBox->setTitle(QCoreApplication::translate("CClampTabWidget", "\345\237\272\346\234\254\345\217\202\346\225\260", nullptr));
         mode->setText(QCoreApplication::translate("CClampTabWidget", "\346\250\241     \345\274\217", nullptr));
         cellComboBox->setItemText(0, QCoreApplication::translate("CClampTabWidget", " \345\205\250\347\273\206\350\203\236", nullptr));
@@ -666,6 +755,10 @@ public:
         v_memLabel->setText(QCoreApplication::translate("CClampTabWidget", "V-mem", nullptr));
         vMimDoubleSpinBox->setPrefix(QString());
         vMimDoubleSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " mv", nullptr));
+        offsetLabel->setText(QCoreApplication::translate("CClampTabWidget", "Offset", nullptr));
+        offsetSpinBox->setPrefix(QString());
+        offsetSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " mv", nullptr));
+        autoBtn1->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
         cFastGrouBox->setTitle(QCoreApplication::translate("CClampTabWidget", "Cp \350\241\245\345\201\277", nullptr));
         MagLabel->setText(QCoreApplication::translate("CClampTabWidget", "Mag", nullptr));
         magSpinBox->setPrefix(QString());
@@ -675,6 +768,7 @@ public:
         TauSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " \316\274s", nullptr));
         autoBtn2->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
         cSlowGroupBox->setTitle(QCoreApplication::translate("CClampTabWidget", "Cm \350\241\245\345\201\277", nullptr));
+        checkBox_2->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
         label_2->setText(QCoreApplication::translate("CClampTabWidget", "Cm", nullptr));
         cmSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " pF", nullptr));
         cmSpinBox->setPrefix(QString());
@@ -682,7 +776,7 @@ public:
         rsSpinBox->setPrefix(QString());
         rsSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " M\316\251", nullptr));
         autoBtn3->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
-        groupBox_3->setTitle(QString());
+        checkBox->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
         label_6->setText(QCoreApplication::translate("CClampTabWidget", "Rs\350\241\245\345\201\277", nullptr));
         spinBox_2->setSuffix(QCoreApplication::translate("CClampTabWidget", " %", nullptr));
         spinBox_2->setPrefix(QString());

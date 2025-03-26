@@ -19,10 +19,10 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     a.setStyleSheet(loadQSS());
-    // CMembraneTestControlArea* p =new CMembraneTestControlArea;
-    // p->show();
-    CMonitorWnd* p =new CMonitorWnd;
+    CMembraneTestControlArea* p =new CMembraneTestControlArea;
     p->show();
+    // CMonitorWnd* p =new CMonitorWnd;
+    // p->show();
 
     return a.exec();
 

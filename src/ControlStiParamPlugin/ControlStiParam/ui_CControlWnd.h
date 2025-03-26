@@ -56,7 +56,7 @@ public:
 
         retranslateUi(controlWnd);
 
-        probeTabWidget->setCurrentIndex(0);
+        probeTabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(controlWnd);

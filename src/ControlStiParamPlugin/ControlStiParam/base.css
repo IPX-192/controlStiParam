@@ -18,9 +18,9 @@
 
 #MembraneTestControlArea QTabBar::tab {
     min-width: 46px; /* 设置最小宽度，防止选项卡过窄
-    min-height:40px;
+    max-height:10px;
     text-align: center; /* 文字居中 */
-    padding: 10px; /* 内边距 */
+    padding: 5px; /* 内边距 */
     border: 1px solid black; /* 黑色边框 */
     background: #383838; /* 背景色 */
     color: #d2d2d2; /* 文字颜色 */
@@ -34,9 +34,7 @@
     margin-right: 0;
 }
 
-#MembraneTestControlArea QTabBar {
-    qproperty-expanding: 1; /* 关键属性：选项卡均匀铺满 */
-}
+
 #MembraneTestControlArea QTabBar::tab:selected {
     background: #505050; /* 选中选项卡的背景色 */
     font-family: Microsoft YaHei, Microsoft YaHei-Regular;
@@ -98,6 +96,15 @@ background: #2d2d2d;;      /* 按钮背景颜色 */
     background: #383838;
 }
 
+#MembraneTestControlArea QFrame#offsetFrame{
+border: 1px solid #515151;
+border-radius: 1px;
+}
+
+#MembraneTestControlArea QFrame#RsFrame{
+border: 1px solid #515151;
+border-radius: 1px;
+}
 
 #clampWidget QTabWidget::pane {
     border: solid 0.5px  black;  /* 内容区域的黑色细实线边框 */
@@ -845,6 +852,7 @@ selection-background-color:rgb(100,100,100);
 alternate-background-color:rgb(74,74,74);
 gridline-color: #515151;
 font: 9pt "Microsoft YaHei";
+text-align: center;
 
 }
 
@@ -876,6 +884,7 @@ CDataMonitorWnd CTableViewBasic CCusHeaderView::section::hover{
     background-color: rgb(80, 80, 80);
 }
 
+
 /*表格的父窗口不能直接通过样式表设置背景，会覆盖当前的背景*/
 #tableParent{
 background-color:  rgb(56, 56, 56);
@@ -891,6 +900,9 @@ background: #383838;
 
 #patchTestWnd QLabel{
 color: white;
+font-size: 13px;
+font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+font-weight: 400;
 }
 
 #patchTestWnd #step1Label{
@@ -917,7 +929,7 @@ border-radius: 2px;
 #patchTestWnd QTabBar::tab {
     width: 100%; /* 每个选项卡占 50% 的宽度 */
     color: #d2d2d2;        /* 选项卡文字颜色 */
-    padding: 10px;       /* 内边距 */
+    padding: 5px;       /* 内边距 */
     border: 1px solid black; /* 黑色边框 */
     background: #383838;
 }
@@ -969,5 +981,123 @@ background: #383838;
 
 
 
+/*数据结果样式*/
+#DataResultWnd{
+background: #383838;
+}
+
+#DataResultWnd QGroupBox{
+    background: #383838;
+    border: 1px solid #313030; /* 设置边框线的颜色和类型 */
+}
+
+#DataResultWnd QTabWidget::pane {
+    border: solid 0.5px  black;  /* 内容区域的黑色细实线边框 */
+}
+
+#DataResultWnd QTabWidget::tab-bar {
+    alignment: center; /* 可选：让选项卡对齐中间 */
+    border: 0.5px  black;
+}
+
+#DataResultWnd QTabBar::tab {
+    min-width: 100px; /* 设置最小宽度，防止选项卡过窄
+    max-height:45px;
+    text-align: center; /* 文字居中 */
+    padding: 10px; /* 内边距 */
+    border: 1px solid black; /* 黑色边框 */
+    background: #383838; /* 背景色 */
+    color: #d2d2d2; /* 文字颜色 */
+}
+
+#DataResultWnd QTabBar::tab:first {
+    margin-left: 0;
+}
+
+#DataResultWnd QTabBar::tab:last {
+    margin-right: 0;
+}
+
+#DataResultWnd QTabBar {
+    qproperty-expanding: 1; /* 关键属性：选项卡均匀铺满 */
+}
+#DataResultWnd QTabBar::tab:selected {
+    background: #505050; /* 选中选项卡的背景色 */
+    font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+    font-weight: 400;
+    color: #5aa4f0;
+}
+#DataResultWnd #chaEdit{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+color:white;
+text-align: center; /* 文字居中 */
+}
+
+#DataResultWnd QLabel{
+color:white;
+}
 
 
+#DataResultWnd QPushButton {
+   background-color: #4A4A4A; /* 鼠标悬停时的背景色 */
+   border: 1px solid rgba(255, 255, 255, 0.3); /* 边框颜色，带透明度 */
+   border-radius: 5px; /* 圆角半径 */
+   color: #FFFFFF; /* 文字颜色 */
+   font: 14px "Microsoft YaHei"; /* 字体大小和字体族 */
+   padding: 5px 15px; /* 内边距 */
+}
+
+#DataResultWnd QPushButton:hover {
+   background-color: #383838; /* 鼠标悬停时的背景色 */
+}
+
+#DataResultWnd QPushButton:pressed {
+   background-color: #303030; /* 按下时的背景色 */
+   border: 1px solid rgba(255, 255, 255, 0.5); /* 按下时的边框颜色 */
+}
+
+
+
+#DataResultWnd CTableViewBasic{
+border: 1px solid rgb(60,60,60);
+color: rgb(255,255,255);
+/*背景色设置无效*/
+background-color:#383838;
+selection-background-color:rgb(100,100,100);
+/*代码设置双色显示setAlternatingRowColors(true);之后生效*/
+alternate-background-color:rgb(74,74,74);
+gridline-color: #515151;
+font: 9pt "Microsoft YaHei";
+text-align: center;
+
+}
+
+#DataResultWnd CTableViewBasic CCusTableHeaderWidget{
+border: none;
+color:rgb(250,250,250);
+background-color:#313030;
+selection-background-color:rgb(100,100,100);
+gridline-color: rgb(60,60,60);
+font: 12px "Microsoft YaHei";
+text-align: center;
+}
+
+
+
+
+
+#DataResultWnd CTableViewBasic CCusHeaderView{
+color:rgb(245,245,245);
+background-color:#313030;
+selection-background-color:rgb(100,100,100);
+border: 0px solid #000000;
+text-align: center;
+}
+
+
+/*鼠标悬停*/
+#DataResultWnd CTableViewBasic CCusHeaderView::section::hover{
+    background-color: rgb(80, 80, 80);
+}

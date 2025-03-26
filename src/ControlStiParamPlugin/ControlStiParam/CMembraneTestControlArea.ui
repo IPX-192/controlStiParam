@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>259</width>
+    <width>402</width>
     <height>760</height>
    </rect>
   </property>
@@ -53,7 +53,7 @@
       <property name="spacing">
        <number>0</number>
       </property>
-      <item row="0" column="0">
+      <item row="1" column="0">
        <widget class="QTabWidget" name="full_tab">
         <property name="tabPosition">
          <enum>QTabWidget::South</enum>
@@ -62,7 +62,7 @@
          <enum>QTabWidget::Rounded</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="controlWidget">
          <attribute name="title">
@@ -79,11 +79,25 @@
           <string>参数</string>
          </attribute>
         </widget>
-        <widget class="QWidget" name="fileWidget">
-         <attribute name="title">
-          <string>文件</string>
-         </attribute>
-        </widget>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="CDataMonitorPanel" name="dataMonitorTableView">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>195</height>
+         </size>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
        </widget>
       </item>
      </layout>
@@ -91,6 +105,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CDataMonitorPanel</class>
+   <extends>QTableView</extends>
+   <header>CDataMonitorPanel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
