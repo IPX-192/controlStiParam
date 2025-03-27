@@ -11,10 +11,10 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "CDataMonitorPanel.h"
 
@@ -23,14 +23,14 @@ QT_BEGIN_NAMESPACE
 class Ui_MembraneTestControlArea
 {
 public:
-    QGridLayout *gridLayout_2;
+    QVBoxLayout *verticalLayout_2;
     QGroupBox *groupBox;
-    QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout;
+    CDataMonitorPanel *dataMonitorTableView;
     QTabWidget *full_tab;
     QWidget *controlWidget;
     QWidget *stiWidget;
     QWidget *paramWidget;
-    CDataMonitorPanel *dataMonitorTableView;
 
     void setupUi(QWidget *MembraneTestControlArea)
     {
@@ -38,16 +38,25 @@ public:
             MembraneTestControlArea->setObjectName(QString::fromUtf8("MembraneTestControlArea"));
         MembraneTestControlArea->resize(402, 760);
         MembraneTestControlArea->setLayoutDirection(Qt::LeftToRight);
-        gridLayout_2 = new QGridLayout(MembraneTestControlArea);
-        gridLayout_2->setSpacing(0);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_2 = new QVBoxLayout(MembraneTestControlArea);
+        verticalLayout_2->setSpacing(0);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(10, 10, 10, 10);
         groupBox = new QGroupBox(MembraneTestControlArea);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        gridLayout = new QGridLayout(groupBox);
-        gridLayout->setSpacing(0);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
+        groupBox->setStyleSheet(QString::fromUtf8(""));
+        verticalLayout = new QVBoxLayout(groupBox);
+        verticalLayout->setSpacing(20);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        dataMonitorTableView = new CDataMonitorPanel(groupBox);
+        dataMonitorTableView->setObjectName(QString::fromUtf8("dataMonitorTableView"));
+        dataMonitorTableView->setMinimumSize(QSize(0, 200));
+        dataMonitorTableView->setMaximumSize(QSize(16777215, 195));
+        dataMonitorTableView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+        verticalLayout->addWidget(dataMonitorTableView);
+
         full_tab = new QTabWidget(groupBox);
         full_tab->setObjectName(QString::fromUtf8("full_tab"));
         full_tab->setTabPosition(QTabWidget::South);
@@ -62,18 +71,10 @@ public:
         paramWidget->setObjectName(QString::fromUtf8("paramWidget"));
         full_tab->addTab(paramWidget, QString());
 
-        gridLayout->addWidget(full_tab, 1, 0, 1, 1);
-
-        dataMonitorTableView = new CDataMonitorPanel(groupBox);
-        dataMonitorTableView->setObjectName(QString::fromUtf8("dataMonitorTableView"));
-        dataMonitorTableView->setMinimumSize(QSize(0, 200));
-        dataMonitorTableView->setMaximumSize(QSize(16777215, 195));
-        dataMonitorTableView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
-        gridLayout->addWidget(dataMonitorTableView, 0, 0, 1, 1);
+        verticalLayout->addWidget(full_tab);
 
 
-        gridLayout_2->addWidget(groupBox, 0, 0, 1, 1);
+        verticalLayout_2->addWidget(groupBox);
 
 
         retranslateUi(MembraneTestControlArea);
