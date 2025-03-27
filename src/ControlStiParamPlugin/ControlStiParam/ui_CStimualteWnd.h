@@ -68,7 +68,7 @@ public:
     {
         if (stiParamWnd->objectName().isEmpty())
             stiParamWnd->setObjectName(QString::fromUtf8("stiParamWnd"));
-        stiParamWnd->resize(321, 760);
+        stiParamWnd->resize(321, 807);
         stiParamWnd->setMaximumSize(QSize(16777215, 852));
         gridLayout_3 = new QGridLayout(stiParamWnd);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
@@ -398,12 +398,12 @@ public:
         label_9->setText(QCoreApplication::translate("stiParamWnd", "\351\242\221     \347\216\207", nullptr));
         frequencyDoubleSpinBox_membranes->setSuffix(QCoreApplication::translate("stiParamWnd", " Hz", nullptr));
         label_7->setText(QCoreApplication::translate("stiParamWnd", "\345\271\205     \345\272\246", nullptr));
-        amplitudeDoubleSpinBox_membranes->setSuffix(QCoreApplication::translate("stiParamWnd", " V", nullptr));
+        amplitudeDoubleSpinBox_membranes->setSuffix(QCoreApplication::translate("stiParamWnd", "mV", nullptr));
         label_10->setText(QCoreApplication::translate("stiParamWnd", "\346\263\242      \345\275\242", nullptr));
         waveTypeComboBox_membranes->setItemText(0, QCoreApplication::translate("stiParamWnd", "\346\226\271\346\263\242", nullptr));
 
         label_8->setText(QCoreApplication::translate("stiParamWnd", "\346\263\242     \345\256\275", nullptr));
-        wavewidthDoubleSpinBox_membranes->setSuffix(QCoreApplication::translate("stiParamWnd", " ms", nullptr));
+        wavewidthDoubleSpinBox_membranes->setSuffix(QCoreApplication::translate("stiParamWnd", " \316\274s", nullptr));
         label_11->setText(QCoreApplication::translate("stiParamWnd", "\346\263\242\345\275\242\347\244\272\346\204\217", nullptr));
         label_12->setText(QString());
         stiButton->setText(QCoreApplication::translate("stiParamWnd", "\347\240\264 \350\206\234", nullptr));

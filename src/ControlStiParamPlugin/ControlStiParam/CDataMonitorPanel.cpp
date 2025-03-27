@@ -6,7 +6,7 @@
 
 CDataMonitorPanel::CDataMonitorPanel(QWidget *parentWidget)
 {
-    customInit();
+    //customInit();
     displayResultData();
 }
 
@@ -22,7 +22,7 @@ void CDataMonitorPanel::customInit()
     QVector<QString> vecTemp;
 
 
-    vecTemp << tr(u8" ")<<  tr(u8"探头1") << tr(u8"探头2");
+    vecTemp << tr(u8" ")<<  tr(u8"探头112") << tr(u8"探头2");
 
     setHeaderText(0, 0, vecTemp);
 

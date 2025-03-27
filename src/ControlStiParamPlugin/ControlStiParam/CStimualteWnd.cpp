@@ -12,6 +12,21 @@ sampleParamArea::sampleParamArea(QWidget *parent) :
     styleFile.close();
 
     this->setStyleSheet(styleSheet);
+
+    //默认值设置
+    ui->amplitudeDoubleSpinBox->setValue(-100);
+    ui->amplitudeDoubleSpinBox->setRange(-100,100);
+
+    ui->wavewidthDoubleSpinBox->setValue(5);
+    ui->wavewidthDoubleSpinBox->setRange(0.5,500);
+
+    ui->amplitudeDoubleSpinBox_membranes->setValue(500);
+    ui->amplitudeDoubleSpinBox_membranes->setRange(-1000,1000);
+
+    ui->wavewidthDoubleSpinBox_membranes->setValue(500);
+    ui->wavewidthDoubleSpinBox_membranes->setRange(10,10000);
+
+
 }
 
 sampleParamArea::~sampleParamArea()

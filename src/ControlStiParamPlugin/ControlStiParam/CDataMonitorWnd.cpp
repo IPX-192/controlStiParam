@@ -15,7 +15,7 @@ CDataMonitorWnd::CDataMonitorWnd(QWidget *parent)
 
     this->setStyleSheet(styleSheet);
 
-    QVector<QString> vecHorizontalHeaderStr = {u8"探头1", u8"探头2"};
+    QVector<QString> vecHorizontalHeaderStr = {u8"探头11", u8"探头2"};
     QVector<QString> vecVerticalHeaderStr = {u8"Rreal\n(GΩ)", u8"Rs\n(MΩ)", u8"Rm\n(MΩ)", u8"Cm\n(pF)"};
 
     setHeaderText(0, 0, vecHorizontalHeaderStr, true);

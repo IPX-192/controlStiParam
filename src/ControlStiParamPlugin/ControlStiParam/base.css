@@ -78,13 +78,13 @@ background: #2d2d2d;;      /* 按钮背景颜色 */
     width:130px;
     height: 40px; /* 固定高度 */
     text-align: center; /* 文字居中 */
-    border: 1px solid black; /* 黑色边框 */
+    border: 1px solid #5D5D5D; /* 黑色边框 */
     background: #383838; /* 背景色 */
     color: #d2d2d2; /* 文字颜色 */
 }
 
 #probeTabWidget QTabBar::tab:selected {
-    background: #505050; /* 选中选项卡的背景色 */
+    background: #2D2D2D; /* 选中选项卡的背景色 */
     font-family: Microsoft YaHei, Microsoft YaHei-Regular;
     font-weight: 400;
     color: #5aa4f0;
@@ -115,16 +115,6 @@ border-radius: 1px;
     border: 0.5px  black;
 }
 
-#clampWidget QTabBar::tab {
-    min-width: 46px; /* 设置最小宽度，防止选项卡过窄
-    min-height:50px;
-    text-align: center; /* 文字居中 */
-    padding: 10px; /* 内边距 */
-    border: 1px solid black; /* 黑色边框 */
-    background: #383838; /* 背景色 */
-    color: #d2d2d2; /* 文字颜色 */
-}
-
 #clampWidget QTabBar::tab:first {
     margin-left: 0;
 }
@@ -139,24 +129,23 @@ border-radius: 1px;
 }
 
 #clampWidget QTabBar::tab {
-    width:120%;
+    min-width: 46px;
+    width:150px;
     height:40px;
     padding: 0; /* 移除内边距 */
     margin: 0; /* 移除外边距 */
     text-align: center; /* 文字居中 */
     background: #383838; /* 背景色 */
     color: #d2d2d2; /* 文字颜色 */
-    border: 1px solid black; /* 黑色边框 */
+    border: 1px solid #5D5D5D; /* 黑色边框 */
 }
 
-
 #clampWidget QTabBar::tab:selected {
-    background: #505050; /* 选中选项卡的背景色 */
+    background: #2D2D2D; /* 选中选项卡的背景色 */
     font-family: Microsoft YaHei, Microsoft YaHei-Regular;
     font-weight: 400;
     color: #5aa4f0;
 }
-
 
 #clampWidget  #background1 {
     background: #383838;
