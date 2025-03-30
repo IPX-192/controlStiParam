@@ -58,6 +58,7 @@ background: #2d2d2d;;      /* 按钮背景颜色 */
 
 #probeTabWidget QTabWidget::tab-bar {
     border: 0.5px solid black;
+    alignment:center
 }
 
 #probeTabWidget QTabBar {
@@ -75,7 +76,7 @@ background: #2d2d2d;;      /* 按钮背景颜色 */
 }
 
 #probeTabWidget QTabBar::tab {
-    width:130px;
+    width:222px;
     height: 40px; /* 固定高度 */
     text-align: center; /* 文字居中 */
     border: 1px solid #5D5D5D; /* 黑色边框 */
@@ -536,6 +537,28 @@ line-height: 40px;
     image: url(:/icon/resource/icon/Double_Selected.png); /* 选中时的图片 */
 }
 
+#clampWidget QCheckBox{
+font-size: 14px;
+font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+font-weight: 400;
+color: #e5e5e5;
+line-height: 40px;
+}
+
+#clampWidget QCheckBox::indicator {
+    width: 16px; /* 设置指示器的宽度 */
+    height: 16px; /* 设置指示器的高度 */
+}
+
+#clampWidget QCheckBox::indicator:unchecked {
+    image: url(:/icon/resource/icon/Double_Default.png); /* 未选中时的图片 */
+}
+
+#clampWidget QCheckBox::indicator:checked {
+    image: url(:/icon/resource/icon/Double_Selected.png); /* 选中时的图片 */
+}
+
+
 #chaParamWnd QComboBox {
 background: #2d2d2d;
 border: 1px solid #5d5d5d;
@@ -865,6 +888,22 @@ background-color:#313030;
 selection-background-color:rgb(100,100,100);
 border: 0px solid #000000;
 text-align: center;
+}
+
+CDataMonitorWnd QGroupBox {
+    border: 1px solid #222222; /* 设置边框线的颜色和类型 */
+    margin-top: 3ex; /* 调整标题的垂直位置 */
+    color: #cccccc;
+    border-radius: 3px;
+}
+
+CDataMonitorWnd QGroupBox::title {
+    subcontrol-origin: margin; /* 将标题的位置相对于边框的外边距进行定位 */
+    subcontrol-position: top left; /* 标题的位置 */
+    left: 10px; /* 标题距离左边的距离 */
+    margin-left: 2px; /* 标题距离左边的外边距 */
+    padding: 0 0px; /* 标题的内边距 */
+    color:#ffffff
 }
 
 
