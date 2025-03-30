@@ -42,7 +42,7 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="spacing">
-       <number>20</number>
+       <number>15</number>
       </property>
       <property name="leftMargin">
        <number>0</number>
@@ -57,21 +57,12 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="CDataMonitorPanel" name="dataMonitorTableView">
+       <widget class="CDataMonitorWnd" name="widget" native="true">
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>200</height>
+          <height>210</height>
          </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>195</height>
-         </size>
-        </property>
-        <property name="verticalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
         </property>
        </widget>
       </item>
@@ -110,9 +101,10 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>CDataMonitorPanel</class>
-   <extends>QTableView</extends>
-   <header>CDataMonitorPanel.h</header>
+   <class>CDataMonitorWnd</class>
+   <extends>QWidget</extends>
+   <header>CDataMonitorWnd.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
