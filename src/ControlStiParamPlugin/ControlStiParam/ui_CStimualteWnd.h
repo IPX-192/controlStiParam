@@ -45,23 +45,23 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QLabel *label_5;
     QLabel *label_6;
+    QHBoxLayout *horizontalLayout_10;
+    QLabel *label_11;
+    QComboBox *model_RepInt;
     QGroupBox *groupBox_2;
     QGridLayout *gridLayout;
+    QHBoxLayout *horizontalLayout_9;
+    QLabel *label_10;
+    QComboBox *waveTypeComboBox_membranes;
     QHBoxLayout *horizontalLayout_8;
     QLabel *label_9;
     QDoubleSpinBox *frequencyDoubleSpinBox_membranes;
     QHBoxLayout *horizontalLayout_6;
     QLabel *label_7;
     QDoubleSpinBox *amplitudeDoubleSpinBox_membranes;
-    QHBoxLayout *horizontalLayout_9;
-    QLabel *label_10;
-    QComboBox *waveTypeComboBox_membranes;
     QHBoxLayout *horizontalLayout_7;
     QLabel *label_8;
     QDoubleSpinBox *wavewidthDoubleSpinBox_membranes;
-    QHBoxLayout *horizontalLayout_10;
-    QLabel *label_11;
-    QLabel *label_12;
     QPushButton *stiButton;
 
     void setupUi(QWidget *stiParamWnd)
@@ -105,6 +105,7 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(amplitudeDoubleSpinBox->sizePolicy().hasHeightForWidth());
         amplitudeDoubleSpinBox->setSizePolicy(sizePolicy1);
+        amplitudeDoubleSpinBox->setMinimumSize(QSize(0, 30));
         amplitudeDoubleSpinBox->setDecimals(1);
 
         horizontalLayout->addWidget(amplitudeDoubleSpinBox);
@@ -129,6 +130,7 @@ public:
         wavewidthDoubleSpinBox->setObjectName(QString::fromUtf8("wavewidthDoubleSpinBox"));
         sizePolicy1.setHeightForWidth(wavewidthDoubleSpinBox->sizePolicy().hasHeightForWidth());
         wavewidthDoubleSpinBox->setSizePolicy(sizePolicy1);
+        wavewidthDoubleSpinBox->setMinimumSize(QSize(0, 30));
         wavewidthDoubleSpinBox->setDecimals(1);
 
         horizontalLayout_2->addWidget(wavewidthDoubleSpinBox);
@@ -153,6 +155,7 @@ public:
         frequencyDoubleSpinBox->setObjectName(QString::fromUtf8("frequencyDoubleSpinBox"));
         sizePolicy1.setHeightForWidth(frequencyDoubleSpinBox->sizePolicy().hasHeightForWidth());
         frequencyDoubleSpinBox->setSizePolicy(sizePolicy1);
+        frequencyDoubleSpinBox->setMinimumSize(QSize(0, 30));
         frequencyDoubleSpinBox->setDecimals(1);
 
         horizontalLayout_3->addWidget(frequencyDoubleSpinBox);
@@ -181,6 +184,7 @@ public:
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(waveTypeComboBox->sizePolicy().hasHeightForWidth());
         waveTypeComboBox->setSizePolicy(sizePolicy2);
+        waveTypeComboBox->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_4->addWidget(waveTypeComboBox);
 
@@ -214,11 +218,29 @@ public:
 
         gridLayout_2->addLayout(horizontalLayout_5, 4, 0, 1, 1);
 
-        gridLayout_2->setRowStretch(0, 1);
-        gridLayout_2->setRowStretch(1, 1);
-        gridLayout_2->setRowStretch(2, 1);
-        gridLayout_2->setRowStretch(3, 1);
-        gridLayout_2->setRowStretch(4, 2);
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setSpacing(10);
+        horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
+        label_11 = new QLabel(groupBox);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+        sizePolicy.setHeightForWidth(label_11->sizePolicy().hasHeightForWidth());
+        label_11->setSizePolicy(sizePolicy);
+        label_11->setMinimumSize(QSize(0, 0));
+        label_11->setMaximumSize(QSize(16777215, 16777215));
+
+        horizontalLayout_10->addWidget(label_11);
+
+        model_RepInt = new QComboBox(groupBox);
+        model_RepInt->setObjectName(QString::fromUtf8("model_RepInt"));
+        model_RepInt->setMinimumSize(QSize(0, 30));
+
+        horizontalLayout_10->addWidget(model_RepInt);
+
+        horizontalLayout_10->setStretch(0, 1);
+        horizontalLayout_10->setStretch(1, 2);
+
+        gridLayout_2->addLayout(horizontalLayout_10, 5, 0, 1, 1);
+
 
         verticalLayout->addWidget(groupBox);
 
@@ -229,6 +251,31 @@ public:
         gridLayout->setHorizontalSpacing(0);
         gridLayout->setVerticalSpacing(20);
         gridLayout->setContentsMargins(10, 25, 10, 25);
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setSpacing(10);
+        horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
+        label_10 = new QLabel(groupBox_2);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+        sizePolicy.setHeightForWidth(label_10->sizePolicy().hasHeightForWidth());
+        label_10->setSizePolicy(sizePolicy);
+        label_10->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+
+        horizontalLayout_9->addWidget(label_10);
+
+        waveTypeComboBox_membranes = new QComboBox(groupBox_2);
+        waveTypeComboBox_membranes->addItem(QString());
+        waveTypeComboBox_membranes->setObjectName(QString::fromUtf8("waveTypeComboBox_membranes"));
+        sizePolicy2.setHeightForWidth(waveTypeComboBox_membranes->sizePolicy().hasHeightForWidth());
+        waveTypeComboBox_membranes->setSizePolicy(sizePolicy2);
+        waveTypeComboBox_membranes->setMinimumSize(QSize(0, 30));
+
+        horizontalLayout_9->addWidget(waveTypeComboBox_membranes);
+
+        horizontalLayout_9->setStretch(0, 1);
+        horizontalLayout_9->setStretch(1, 2);
+
+        gridLayout->addLayout(horizontalLayout_9, 3, 0, 1, 1);
+
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setSpacing(10);
         horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
@@ -244,6 +291,7 @@ public:
         frequencyDoubleSpinBox_membranes->setObjectName(QString::fromUtf8("frequencyDoubleSpinBox_membranes"));
         sizePolicy1.setHeightForWidth(frequencyDoubleSpinBox_membranes->sizePolicy().hasHeightForWidth());
         frequencyDoubleSpinBox_membranes->setSizePolicy(sizePolicy1);
+        frequencyDoubleSpinBox_membranes->setMinimumSize(QSize(0, 30));
         frequencyDoubleSpinBox_membranes->setDecimals(1);
 
         horizontalLayout_8->addWidget(frequencyDoubleSpinBox_membranes);
@@ -268,6 +316,7 @@ public:
         amplitudeDoubleSpinBox_membranes->setObjectName(QString::fromUtf8("amplitudeDoubleSpinBox_membranes"));
         sizePolicy1.setHeightForWidth(amplitudeDoubleSpinBox_membranes->sizePolicy().hasHeightForWidth());
         amplitudeDoubleSpinBox_membranes->setSizePolicy(sizePolicy1);
+        amplitudeDoubleSpinBox_membranes->setMinimumSize(QSize(0, 30));
         amplitudeDoubleSpinBox_membranes->setDecimals(1);
 
         horizontalLayout_6->addWidget(amplitudeDoubleSpinBox_membranes);
@@ -276,30 +325,6 @@ public:
         horizontalLayout_6->setStretch(1, 2);
 
         gridLayout->addLayout(horizontalLayout_6, 0, 0, 1, 1);
-
-        horizontalLayout_9 = new QHBoxLayout();
-        horizontalLayout_9->setSpacing(10);
-        horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
-        label_10 = new QLabel(groupBox_2);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
-        sizePolicy.setHeightForWidth(label_10->sizePolicy().hasHeightForWidth());
-        label_10->setSizePolicy(sizePolicy);
-        label_10->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-
-        horizontalLayout_9->addWidget(label_10);
-
-        waveTypeComboBox_membranes = new QComboBox(groupBox_2);
-        waveTypeComboBox_membranes->addItem(QString());
-        waveTypeComboBox_membranes->setObjectName(QString::fromUtf8("waveTypeComboBox_membranes"));
-        sizePolicy2.setHeightForWidth(waveTypeComboBox_membranes->sizePolicy().hasHeightForWidth());
-        waveTypeComboBox_membranes->setSizePolicy(sizePolicy2);
-
-        horizontalLayout_9->addWidget(waveTypeComboBox_membranes);
-
-        horizontalLayout_9->setStretch(0, 1);
-        horizontalLayout_9->setStretch(1, 2);
-
-        gridLayout->addLayout(horizontalLayout_9, 3, 0, 1, 1);
 
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setSpacing(10);
@@ -316,6 +341,7 @@ public:
         wavewidthDoubleSpinBox_membranes->setObjectName(QString::fromUtf8("wavewidthDoubleSpinBox_membranes"));
         sizePolicy1.setHeightForWidth(wavewidthDoubleSpinBox_membranes->sizePolicy().hasHeightForWidth());
         wavewidthDoubleSpinBox_membranes->setSizePolicy(sizePolicy1);
+        wavewidthDoubleSpinBox_membranes->setMinimumSize(QSize(0, 30));
         wavewidthDoubleSpinBox_membranes->setDecimals(1);
 
         horizontalLayout_7->addWidget(wavewidthDoubleSpinBox_membranes);
@@ -325,36 +351,7 @@ public:
 
         gridLayout->addLayout(horizontalLayout_7, 1, 0, 1, 1);
 
-        horizontalLayout_10 = new QHBoxLayout();
-        horizontalLayout_10->setSpacing(10);
-        horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
-        label_11 = new QLabel(groupBox_2);
-        label_11->setObjectName(QString::fromUtf8("label_11"));
-        sizePolicy.setHeightForWidth(label_11->sizePolicy().hasHeightForWidth());
-        label_11->setSizePolicy(sizePolicy);
-        label_11->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-
-        horizontalLayout_10->addWidget(label_11);
-
-        label_12 = new QLabel(groupBox_2);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
-        sizePolicy2.setHeightForWidth(label_12->sizePolicy().hasHeightForWidth());
-        label_12->setSizePolicy(sizePolicy2);
-        label_12->setPixmap(QPixmap(QString::fromUtf8(":/img/resource/tool/S_mall_wave1_new.PNG")));
-        label_12->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-
-        horizontalLayout_10->addWidget(label_12);
-
-        horizontalLayout_10->setStretch(0, 1);
-        horizontalLayout_10->setStretch(1, 2);
-
-        gridLayout->addLayout(horizontalLayout_10, 4, 0, 1, 1);
-
         gridLayout->setRowStretch(0, 1);
-        gridLayout->setRowStretch(1, 1);
-        gridLayout->setRowStretch(2, 1);
-        gridLayout->setRowStretch(3, 1);
-        gridLayout->setRowStretch(4, 2);
 
         verticalLayout->addWidget(groupBox_2);
 
@@ -394,18 +391,17 @@ public:
 
         label_5->setText(QCoreApplication::translate("stiParamWnd", "\346\263\242\345\275\242\347\244\272\346\204\217", nullptr));
         label_6->setText(QString());
+        label_11->setText(QCoreApplication::translate("stiParamWnd", "\351\207\215\345\244\215\345\221\250\346\234\237", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("stiParamWnd", "\347\240\264\350\206\234\350\204\211\345\206\262\345\217\202\346\225\260\350\260\203\350\212\202", nullptr));
+        label_10->setText(QCoreApplication::translate("stiParamWnd", "\346\263\242      \345\275\242", nullptr));
+        waveTypeComboBox_membranes->setItemText(0, QCoreApplication::translate("stiParamWnd", "\346\226\271\346\263\242", nullptr));
+
         label_9->setText(QCoreApplication::translate("stiParamWnd", "\351\242\221     \347\216\207", nullptr));
         frequencyDoubleSpinBox_membranes->setSuffix(QCoreApplication::translate("stiParamWnd", " Hz", nullptr));
         label_7->setText(QCoreApplication::translate("stiParamWnd", "\345\271\205     \345\272\246", nullptr));
         amplitudeDoubleSpinBox_membranes->setSuffix(QCoreApplication::translate("stiParamWnd", "mV", nullptr));
-        label_10->setText(QCoreApplication::translate("stiParamWnd", "\346\263\242      \345\275\242", nullptr));
-        waveTypeComboBox_membranes->setItemText(0, QCoreApplication::translate("stiParamWnd", "\346\226\271\346\263\242", nullptr));
-
         label_8->setText(QCoreApplication::translate("stiParamWnd", "\346\263\242     \345\256\275", nullptr));
         wavewidthDoubleSpinBox_membranes->setSuffix(QCoreApplication::translate("stiParamWnd", " \316\274s", nullptr));
-        label_11->setText(QCoreApplication::translate("stiParamWnd", "\346\263\242\345\275\242\347\244\272\346\204\217", nullptr));
-        label_12->setText(QString());
         stiButton->setText(QCoreApplication::translate("stiParamWnd", "\347\240\264 \350\206\234", nullptr));
     } // retranslateUi
 

@@ -20,7 +20,6 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -40,20 +39,20 @@ public:
     QLabel *mode;
     QComboBox *cellComboBox;
     QHBoxLayout *horizontalLayout_2;
-    QCheckBox *checkBox_9;
+    QCheckBox *vMenCheckBox;
     QLabel *v_memLabel;
     QDoubleSpinBox *vMimDoubleSpinBox;
     QFrame *offsetFrame;
     QVBoxLayout *verticalLayout_4;
     QHBoxLayout *horizontalLayout_6;
     QHBoxLayout *horizontalLayout_3;
-    QCheckBox *checkBox_8;
+    QCheckBox *vOffsetCheckBox;
     QLabel *offsetLabel;
     QDoubleSpinBox *offsetSpinBox;
-    QPushButton *autoBtn1;
+    QPushButton *vOffsetAuto;
     QGroupBox *cFastGrouBox;
     QHBoxLayout *horizontalLayout_19;
-    QCheckBox *checkBox_7;
+    QCheckBox *vCpCheckBox;
     QHBoxLayout *horizontalLayout_17;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_4;
@@ -62,31 +61,31 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QLabel *TauLabel;
     QDoubleSpinBox *TauSpinBox;
-    QPushButton *autoBtn2;
+    QPushButton *vCpAuto;
     QGroupBox *cSlowGroupBox;
     QHBoxLayout *horizontalLayout_21;
-    QCheckBox *checkBox_2;
+    QCheckBox *vCmCheckBox;
     QHBoxLayout *horizontalLayout_18;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_8;
     QLabel *label_2;
-    QSpinBox *cmSpinBox;
+    QDoubleSpinBox *cmDoubleSpinBox;
     QHBoxLayout *horizontalLayout_7;
     QLabel *rs_label;
     QDoubleSpinBox *rsSpinBox;
-    QPushButton *autoBtn3;
+    QPushButton *vCmAuto;
     QFrame *RsFrame;
     QHBoxLayout *horizontalLayout_20;
-    QCheckBox *checkBox;
+    QCheckBox *vRsCheckBox;
     QHBoxLayout *horizontalLayout_10;
     QVBoxLayout *verticalLayout_6;
     QHBoxLayout *horizontalLayout_9;
     QLabel *label_6;
-    QSpinBox *currSpinBox;
+    QDoubleSpinBox *currSpinBox;
     QHBoxLayout *horizontalLayout_11;
     QLabel *label;
     QDoubleSpinBox *lagSpinBox;
-    QPushButton *pushButton;
+    QPushButton *vRsAuto;
     QWidget *curTab;
     QVBoxLayout *verticalLayout_9;
     QGroupBox *basicParamGroupBox_2;
@@ -95,26 +94,26 @@ public:
     QLabel *mode_2;
     QComboBox *cellComboBox_2;
     QHBoxLayout *horizontalLayout_13;
-    QCheckBox *checkBox_6;
+    QCheckBox *cMenCheckBox;
     QLabel *v_memLabel_2;
     QDoubleSpinBox *cMimDoubleSpinBox;
     QGroupBox *offsetGroupBox_2;
     QHBoxLayout *horizontalLayout_22;
-    QCheckBox *checkBox_5;
+    QCheckBox *cOffsetCheckBox;
     QHBoxLayout *horizontalLayout_14;
     QLabel *offsetLabel_2;
     QDoubleSpinBox *cOffsetSpinBox;
-    QPushButton *autoBtn1_2;
+    QPushButton *cOffsetAuto;
     QGroupBox *offsetGroupBox_3;
     QHBoxLayout *horizontalLayout_23;
-    QCheckBox *checkBox_4;
+    QCheckBox *cCpCheckBox;
     QHBoxLayout *horizontalLayout_15;
     QLabel *offsetLabel_3;
     QDoubleSpinBox *cMagSpinBox;
-    QPushButton *autoBtn1_3;
+    QPushButton *cCpAuto;
     QGroupBox *offsetGroupBox_4;
     QHBoxLayout *horizontalLayout_26;
-    QCheckBox *checkBox_3;
+    QCheckBox *cBridgeCheckBox;
     QVBoxLayout *verticalLayout_8;
     QHBoxLayout *horizontalLayout_16;
     QLabel *offsetLabel_4;
@@ -125,13 +124,13 @@ public:
     QHBoxLayout *horizontalLayout_25;
     QLabel *offsetLabel_6;
     QDoubleSpinBox *cDurSpinBox;
-    QPushButton *autoBtn1_4;
+    QPushButton *cBridgeCheckAuto;
 
     void setupUi(QWidget *CClampTabWidget)
     {
         if (CClampTabWidget->objectName().isEmpty())
             CClampTabWidget->setObjectName(QString::fromUtf8("CClampTabWidget"));
-        CClampTabWidget->resize(672, 678);
+        CClampTabWidget->resize(672, 680);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -175,9 +174,9 @@ public:
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(mode->sizePolicy().hasHeightForWidth());
         mode->setSizePolicy(sizePolicy2);
-        mode->setMinimumSize(QSize(80, 0));
+        mode->setMinimumSize(QSize(100, 0));
         mode->setFont(font);
-        mode->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        mode->setAlignment(Qt::AlignCenter);
 
         horizontalLayout->addWidget(mode);
 
@@ -200,21 +199,22 @@ public:
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(10);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        checkBox_9 = new QCheckBox(basicParamGroupBox);
-        checkBox_9->setObjectName(QString::fromUtf8("checkBox_9"));
+        horizontalLayout_2->setContentsMargins(9, -1, -1, -1);
+        vMenCheckBox = new QCheckBox(basicParamGroupBox);
+        vMenCheckBox->setObjectName(QString::fromUtf8("vMenCheckBox"));
 
-        horizontalLayout_2->addWidget(checkBox_9);
+        horizontalLayout_2->addWidget(vMenCheckBox);
 
         v_memLabel = new QLabel(basicParamGroupBox);
         v_memLabel->setObjectName(QString::fromUtf8("v_memLabel"));
         sizePolicy2.setHeightForWidth(v_memLabel->sizePolicy().hasHeightForWidth());
         v_memLabel->setSizePolicy(sizePolicy2);
-        v_memLabel->setMinimumSize(QSize(80, 0));
+        v_memLabel->setMinimumSize(QSize(100, 0));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Microsoft YaHei UI Light"));
         font1.setPointSize(10);
         v_memLabel->setFont(font1);
-        v_memLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        v_memLabel->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_2->addWidget(v_memLabel);
 
@@ -252,10 +252,10 @@ public:
         horizontalLayout_3->setSpacing(0);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(-1, -1, 30, -1);
-        checkBox_8 = new QCheckBox(offsetFrame);
-        checkBox_8->setObjectName(QString::fromUtf8("checkBox_8"));
+        vOffsetCheckBox = new QCheckBox(offsetFrame);
+        vOffsetCheckBox->setObjectName(QString::fromUtf8("vOffsetCheckBox"));
 
-        horizontalLayout_3->addWidget(checkBox_8);
+        horizontalLayout_3->addWidget(vOffsetCheckBox);
 
         offsetLabel = new QLabel(offsetFrame);
         offsetLabel->setObjectName(QString::fromUtf8("offsetLabel"));
@@ -263,7 +263,7 @@ public:
         offsetLabel->setSizePolicy(sizePolicy2);
         offsetLabel->setMinimumSize(QSize(80, 0));
         offsetLabel->setFont(font);
-        offsetLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        offsetLabel->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_3->addWidget(offsetLabel);
 
@@ -281,16 +281,16 @@ public:
 
         horizontalLayout_6->addLayout(horizontalLayout_3);
 
-        autoBtn1 = new QPushButton(offsetFrame);
-        autoBtn1->setObjectName(QString::fromUtf8("autoBtn1"));
-        sizePolicy1.setHeightForWidth(autoBtn1->sizePolicy().hasHeightForWidth());
-        autoBtn1->setSizePolicy(sizePolicy1);
-        autoBtn1->setMinimumSize(QSize(70, 30));
-        autoBtn1->setMaximumSize(QSize(70, 30));
-        autoBtn1->setFont(font);
-        autoBtn1->setStyleSheet(QString::fromUtf8(""));
+        vOffsetAuto = new QPushButton(offsetFrame);
+        vOffsetAuto->setObjectName(QString::fromUtf8("vOffsetAuto"));
+        sizePolicy1.setHeightForWidth(vOffsetAuto->sizePolicy().hasHeightForWidth());
+        vOffsetAuto->setSizePolicy(sizePolicy1);
+        vOffsetAuto->setMinimumSize(QSize(70, 30));
+        vOffsetAuto->setMaximumSize(QSize(70, 30));
+        vOffsetAuto->setFont(font);
+        vOffsetAuto->setStyleSheet(QString::fromUtf8(""));
 
-        horizontalLayout_6->addWidget(autoBtn1);
+        horizontalLayout_6->addWidget(vOffsetAuto);
 
 
         verticalLayout_4->addLayout(horizontalLayout_6);
@@ -312,10 +312,10 @@ public:
         horizontalLayout_19->setSpacing(0);
         horizontalLayout_19->setObjectName(QString::fromUtf8("horizontalLayout_19"));
         horizontalLayout_19->setContentsMargins(16, 10, 16, 10);
-        checkBox_7 = new QCheckBox(cFastGrouBox);
-        checkBox_7->setObjectName(QString::fromUtf8("checkBox_7"));
+        vCpCheckBox = new QCheckBox(cFastGrouBox);
+        vCpCheckBox->setObjectName(QString::fromUtf8("vCpCheckBox"));
 
-        horizontalLayout_19->addWidget(checkBox_7);
+        horizontalLayout_19->addWidget(vCpCheckBox);
 
         horizontalLayout_17 = new QHBoxLayout();
         horizontalLayout_17->setObjectName(QString::fromUtf8("horizontalLayout_17"));
@@ -332,7 +332,7 @@ public:
         sizePolicy2.setHeightForWidth(MagLabel->sizePolicy().hasHeightForWidth());
         MagLabel->setSizePolicy(sizePolicy2);
         MagLabel->setMinimumSize(QSize(80, 0));
-        MagLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        MagLabel->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_4->addWidget(MagLabel);
 
@@ -358,7 +358,7 @@ public:
         sizePolicy2.setHeightForWidth(TauLabel->sizePolicy().hasHeightForWidth());
         TauLabel->setSizePolicy(sizePolicy2);
         TauLabel->setMinimumSize(QSize(80, 0));
-        TauLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        TauLabel->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_5->addWidget(TauLabel);
 
@@ -378,14 +378,14 @@ public:
 
         horizontalLayout_17->addLayout(verticalLayout);
 
-        autoBtn2 = new QPushButton(cFastGrouBox);
-        autoBtn2->setObjectName(QString::fromUtf8("autoBtn2"));
-        sizePolicy1.setHeightForWidth(autoBtn2->sizePolicy().hasHeightForWidth());
-        autoBtn2->setSizePolicy(sizePolicy1);
-        autoBtn2->setMinimumSize(QSize(70, 30));
-        autoBtn2->setMaximumSize(QSize(70, 30));
+        vCpAuto = new QPushButton(cFastGrouBox);
+        vCpAuto->setObjectName(QString::fromUtf8("vCpAuto"));
+        sizePolicy1.setHeightForWidth(vCpAuto->sizePolicy().hasHeightForWidth());
+        vCpAuto->setSizePolicy(sizePolicy1);
+        vCpAuto->setMinimumSize(QSize(70, 30));
+        vCpAuto->setMaximumSize(QSize(70, 30));
 
-        horizontalLayout_17->addWidget(autoBtn2);
+        horizontalLayout_17->addWidget(vCpAuto);
 
 
         horizontalLayout_19->addLayout(horizontalLayout_17);
@@ -402,15 +402,15 @@ public:
         cSlowGroupBox->setFont(font);
         horizontalLayout_21 = new QHBoxLayout(cSlowGroupBox);
         horizontalLayout_21->setObjectName(QString::fromUtf8("horizontalLayout_21"));
-        horizontalLayout_21->setContentsMargins(10, 10, 10, 10);
-        checkBox_2 = new QCheckBox(cSlowGroupBox);
-        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
+        horizontalLayout_21->setContentsMargins(16, 10, 16, 10);
+        vCmCheckBox = new QCheckBox(cSlowGroupBox);
+        vCmCheckBox->setObjectName(QString::fromUtf8("vCmCheckBox"));
 
-        horizontalLayout_21->addWidget(checkBox_2);
+        horizontalLayout_21->addWidget(vCmCheckBox);
 
         horizontalLayout_18 = new QHBoxLayout();
         horizontalLayout_18->setObjectName(QString::fromUtf8("horizontalLayout_18"));
-        horizontalLayout_18->setContentsMargins(-1, -1, 10, -1);
+        horizontalLayout_18->setContentsMargins(-1, -1, 0, -1);
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(5);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
@@ -423,19 +423,20 @@ public:
         sizePolicy2.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
         label_2->setSizePolicy(sizePolicy2);
         label_2->setMinimumSize(QSize(50, 0));
-        label_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        label_2->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_8->addWidget(label_2);
 
-        cmSpinBox = new QSpinBox(cSlowGroupBox);
-        cmSpinBox->setObjectName(QString::fromUtf8("cmSpinBox"));
-        sizePolicy2.setHeightForWidth(cmSpinBox->sizePolicy().hasHeightForWidth());
-        cmSpinBox->setSizePolicy(sizePolicy2);
-        cmSpinBox->setMinimumSize(QSize(122, 30));
-        cmSpinBox->setMaximumSize(QSize(16777215, 16777215));
-        cmSpinBox->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        cmDoubleSpinBox = new QDoubleSpinBox(cSlowGroupBox);
+        cmDoubleSpinBox->setObjectName(QString::fromUtf8("cmDoubleSpinBox"));
+        sizePolicy2.setHeightForWidth(cmDoubleSpinBox->sizePolicy().hasHeightForWidth());
+        cmDoubleSpinBox->setSizePolicy(sizePolicy2);
+        cmDoubleSpinBox->setMinimumSize(QSize(122, 30));
+        cmDoubleSpinBox->setMaximumSize(QSize(16777215, 16777215));
+        cmDoubleSpinBox->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        cmDoubleSpinBox->setDecimals(1);
 
-        horizontalLayout_8->addWidget(cmSpinBox);
+        horizontalLayout_8->addWidget(cmDoubleSpinBox);
 
 
         verticalLayout_2->addLayout(horizontalLayout_8);
@@ -449,7 +450,7 @@ public:
         sizePolicy2.setHeightForWidth(rs_label->sizePolicy().hasHeightForWidth());
         rs_label->setSizePolicy(sizePolicy2);
         rs_label->setMinimumSize(QSize(50, 0));
-        rs_label->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        rs_label->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_7->addWidget(rs_label);
 
@@ -470,14 +471,14 @@ public:
 
         horizontalLayout_18->addLayout(verticalLayout_2);
 
-        autoBtn3 = new QPushButton(cSlowGroupBox);
-        autoBtn3->setObjectName(QString::fromUtf8("autoBtn3"));
-        sizePolicy1.setHeightForWidth(autoBtn3->sizePolicy().hasHeightForWidth());
-        autoBtn3->setSizePolicy(sizePolicy1);
-        autoBtn3->setMinimumSize(QSize(70, 30));
-        autoBtn3->setMaximumSize(QSize(70, 30));
+        vCmAuto = new QPushButton(cSlowGroupBox);
+        vCmAuto->setObjectName(QString::fromUtf8("vCmAuto"));
+        sizePolicy1.setHeightForWidth(vCmAuto->sizePolicy().hasHeightForWidth());
+        vCmAuto->setSizePolicy(sizePolicy1);
+        vCmAuto->setMinimumSize(QSize(70, 30));
+        vCmAuto->setMaximumSize(QSize(70, 30));
 
-        horizontalLayout_18->addWidget(autoBtn3);
+        horizontalLayout_18->addWidget(vCmAuto);
 
 
         horizontalLayout_21->addLayout(horizontalLayout_18);
@@ -493,14 +494,15 @@ public:
         RsFrame->setFont(font);
         horizontalLayout_20 = new QHBoxLayout(RsFrame);
         horizontalLayout_20->setObjectName(QString::fromUtf8("horizontalLayout_20"));
-        checkBox = new QCheckBox(RsFrame);
-        checkBox->setObjectName(QString::fromUtf8("checkBox"));
+        horizontalLayout_20->setContentsMargins(16, 10, 16, 10);
+        vRsCheckBox = new QCheckBox(RsFrame);
+        vRsCheckBox->setObjectName(QString::fromUtf8("vRsCheckBox"));
 
-        horizontalLayout_20->addWidget(checkBox);
+        horizontalLayout_20->addWidget(vRsCheckBox);
 
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
-        horizontalLayout_10->setContentsMargins(-1, -1, 10, -1);
+        horizontalLayout_10->setContentsMargins(-1, -1, 0, -1);
         verticalLayout_6 = new QVBoxLayout();
         verticalLayout_6->setSpacing(10);
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
@@ -513,16 +515,17 @@ public:
         sizePolicy2.setHeightForWidth(label_6->sizePolicy().hasHeightForWidth());
         label_6->setSizePolicy(sizePolicy2);
         label_6->setMinimumSize(QSize(50, 0));
-        label_6->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        label_6->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_9->addWidget(label_6);
 
-        currSpinBox = new QSpinBox(RsFrame);
+        currSpinBox = new QDoubleSpinBox(RsFrame);
         currSpinBox->setObjectName(QString::fromUtf8("currSpinBox"));
         sizePolicy2.setHeightForWidth(currSpinBox->sizePolicy().hasHeightForWidth());
         currSpinBox->setSizePolicy(sizePolicy2);
         currSpinBox->setMinimumSize(QSize(122, 35));
         currSpinBox->setMaximumSize(QSize(16777215, 30));
+        currSpinBox->setDecimals(0);
 
         horizontalLayout_9->addWidget(currSpinBox);
 
@@ -530,6 +533,7 @@ public:
         verticalLayout_6->addLayout(horizontalLayout_9);
 
         horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setSpacing(0);
         horizontalLayout_11->setObjectName(QString::fromUtf8("horizontalLayout_11"));
         horizontalLayout_11->setContentsMargins(-1, -1, 30, -1);
         label = new QLabel(RsFrame);
@@ -537,6 +541,7 @@ public:
         sizePolicy2.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy2);
         label->setMinimumSize(QSize(50, 0));
+        label->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_11->addWidget(label);
 
@@ -544,7 +549,7 @@ public:
         lagSpinBox->setObjectName(QString::fromUtf8("lagSpinBox"));
         sizePolicy2.setHeightForWidth(lagSpinBox->sizePolicy().hasHeightForWidth());
         lagSpinBox->setSizePolicy(sizePolicy2);
-        lagSpinBox->setMinimumSize(QSize(122, 30));
+        lagSpinBox->setMinimumSize(QSize(126, 30));
 
         horizontalLayout_11->addWidget(lagSpinBox);
 
@@ -554,14 +559,14 @@ public:
 
         horizontalLayout_10->addLayout(verticalLayout_6);
 
-        pushButton = new QPushButton(RsFrame);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        sizePolicy2.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
-        pushButton->setSizePolicy(sizePolicy2);
-        pushButton->setMinimumSize(QSize(70, 30));
-        pushButton->setMaximumSize(QSize(70, 30));
+        vRsAuto = new QPushButton(RsFrame);
+        vRsAuto->setObjectName(QString::fromUtf8("vRsAuto"));
+        sizePolicy2.setHeightForWidth(vRsAuto->sizePolicy().hasHeightForWidth());
+        vRsAuto->setSizePolicy(sizePolicy2);
+        vRsAuto->setMinimumSize(QSize(70, 30));
+        vRsAuto->setMaximumSize(QSize(70, 30));
 
-        horizontalLayout_10->addWidget(pushButton);
+        horizontalLayout_10->addWidget(vRsAuto);
 
 
         horizontalLayout_20->addLayout(horizontalLayout_10);
@@ -594,7 +599,7 @@ public:
         sizePolicy2.setHeightForWidth(mode_2->sizePolicy().hasHeightForWidth());
         mode_2->setSizePolicy(sizePolicy2);
         mode_2->setFont(font);
-        mode_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        mode_2->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_12->addWidget(mode_2);
 
@@ -616,17 +621,18 @@ public:
         horizontalLayout_13 = new QHBoxLayout();
         horizontalLayout_13->setSpacing(10);
         horizontalLayout_13->setObjectName(QString::fromUtf8("horizontalLayout_13"));
-        checkBox_6 = new QCheckBox(basicParamGroupBox_2);
-        checkBox_6->setObjectName(QString::fromUtf8("checkBox_6"));
+        horizontalLayout_13->setContentsMargins(6, -1, -1, -1);
+        cMenCheckBox = new QCheckBox(basicParamGroupBox_2);
+        cMenCheckBox->setObjectName(QString::fromUtf8("cMenCheckBox"));
 
-        horizontalLayout_13->addWidget(checkBox_6);
+        horizontalLayout_13->addWidget(cMenCheckBox);
 
         v_memLabel_2 = new QLabel(basicParamGroupBox_2);
         v_memLabel_2->setObjectName(QString::fromUtf8("v_memLabel_2"));
         sizePolicy2.setHeightForWidth(v_memLabel_2->sizePolicy().hasHeightForWidth());
         v_memLabel_2->setSizePolicy(sizePolicy2);
         v_memLabel_2->setFont(font1);
-        v_memLabel_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        v_memLabel_2->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_13->addWidget(v_memLabel_2);
 
@@ -656,10 +662,10 @@ public:
         horizontalLayout_22 = new QHBoxLayout(offsetGroupBox_2);
         horizontalLayout_22->setObjectName(QString::fromUtf8("horizontalLayout_22"));
         horizontalLayout_22->setContentsMargins(10, 15, 10, 10);
-        checkBox_5 = new QCheckBox(offsetGroupBox_2);
-        checkBox_5->setObjectName(QString::fromUtf8("checkBox_5"));
+        cOffsetCheckBox = new QCheckBox(offsetGroupBox_2);
+        cOffsetCheckBox->setObjectName(QString::fromUtf8("cOffsetCheckBox"));
 
-        horizontalLayout_22->addWidget(checkBox_5);
+        horizontalLayout_22->addWidget(cOffsetCheckBox);
 
         horizontalLayout_14 = new QHBoxLayout();
         horizontalLayout_14->setSpacing(10);
@@ -670,7 +676,7 @@ public:
         sizePolicy2.setHeightForWidth(offsetLabel_2->sizePolicy().hasHeightForWidth());
         offsetLabel_2->setSizePolicy(sizePolicy2);
         offsetLabel_2->setFont(font);
-        offsetLabel_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        offsetLabel_2->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_14->addWidget(offsetLabel_2);
 
@@ -689,16 +695,16 @@ public:
 
         horizontalLayout_22->addLayout(horizontalLayout_14);
 
-        autoBtn1_2 = new QPushButton(offsetGroupBox_2);
-        autoBtn1_2->setObjectName(QString::fromUtf8("autoBtn1_2"));
-        sizePolicy1.setHeightForWidth(autoBtn1_2->sizePolicy().hasHeightForWidth());
-        autoBtn1_2->setSizePolicy(sizePolicy1);
-        autoBtn1_2->setMinimumSize(QSize(70, 30));
-        autoBtn1_2->setMaximumSize(QSize(70, 30));
-        autoBtn1_2->setFont(font);
-        autoBtn1_2->setStyleSheet(QString::fromUtf8(""));
+        cOffsetAuto = new QPushButton(offsetGroupBox_2);
+        cOffsetAuto->setObjectName(QString::fromUtf8("cOffsetAuto"));
+        sizePolicy1.setHeightForWidth(cOffsetAuto->sizePolicy().hasHeightForWidth());
+        cOffsetAuto->setSizePolicy(sizePolicy1);
+        cOffsetAuto->setMinimumSize(QSize(70, 30));
+        cOffsetAuto->setMaximumSize(QSize(70, 30));
+        cOffsetAuto->setFont(font);
+        cOffsetAuto->setStyleSheet(QString::fromUtf8(""));
 
-        horizontalLayout_22->addWidget(autoBtn1_2);
+        horizontalLayout_22->addWidget(cOffsetAuto);
 
 
         verticalLayout_9->addWidget(offsetGroupBox_2);
@@ -709,10 +715,10 @@ public:
         horizontalLayout_23 = new QHBoxLayout(offsetGroupBox_3);
         horizontalLayout_23->setObjectName(QString::fromUtf8("horizontalLayout_23"));
         horizontalLayout_23->setContentsMargins(10, 15, 10, 10);
-        checkBox_4 = new QCheckBox(offsetGroupBox_3);
-        checkBox_4->setObjectName(QString::fromUtf8("checkBox_4"));
+        cCpCheckBox = new QCheckBox(offsetGroupBox_3);
+        cCpCheckBox->setObjectName(QString::fromUtf8("cCpCheckBox"));
 
-        horizontalLayout_23->addWidget(checkBox_4);
+        horizontalLayout_23->addWidget(cCpCheckBox);
 
         horizontalLayout_15 = new QHBoxLayout();
         horizontalLayout_15->setSpacing(10);
@@ -723,7 +729,7 @@ public:
         sizePolicy2.setHeightForWidth(offsetLabel_3->sizePolicy().hasHeightForWidth());
         offsetLabel_3->setSizePolicy(sizePolicy2);
         offsetLabel_3->setFont(font);
-        offsetLabel_3->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        offsetLabel_3->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_15->addWidget(offsetLabel_3);
 
@@ -742,16 +748,16 @@ public:
 
         horizontalLayout_23->addLayout(horizontalLayout_15);
 
-        autoBtn1_3 = new QPushButton(offsetGroupBox_3);
-        autoBtn1_3->setObjectName(QString::fromUtf8("autoBtn1_3"));
-        sizePolicy1.setHeightForWidth(autoBtn1_3->sizePolicy().hasHeightForWidth());
-        autoBtn1_3->setSizePolicy(sizePolicy1);
-        autoBtn1_3->setMinimumSize(QSize(70, 30));
-        autoBtn1_3->setMaximumSize(QSize(70, 30));
-        autoBtn1_3->setFont(font);
-        autoBtn1_3->setStyleSheet(QString::fromUtf8(""));
+        cCpAuto = new QPushButton(offsetGroupBox_3);
+        cCpAuto->setObjectName(QString::fromUtf8("cCpAuto"));
+        sizePolicy1.setHeightForWidth(cCpAuto->sizePolicy().hasHeightForWidth());
+        cCpAuto->setSizePolicy(sizePolicy1);
+        cCpAuto->setMinimumSize(QSize(70, 30));
+        cCpAuto->setMaximumSize(QSize(70, 30));
+        cCpAuto->setFont(font);
+        cCpAuto->setStyleSheet(QString::fromUtf8(""));
 
-        horizontalLayout_23->addWidget(autoBtn1_3);
+        horizontalLayout_23->addWidget(cCpAuto);
 
 
         verticalLayout_9->addWidget(offsetGroupBox_3);
@@ -761,10 +767,10 @@ public:
         offsetGroupBox_4->setMaximumSize(QSize(16777215, 16777215));
         horizontalLayout_26 = new QHBoxLayout(offsetGroupBox_4);
         horizontalLayout_26->setObjectName(QString::fromUtf8("horizontalLayout_26"));
-        checkBox_3 = new QCheckBox(offsetGroupBox_4);
-        checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
+        cBridgeCheckBox = new QCheckBox(offsetGroupBox_4);
+        cBridgeCheckBox->setObjectName(QString::fromUtf8("cBridgeCheckBox"));
 
-        horizontalLayout_26->addWidget(checkBox_3);
+        horizontalLayout_26->addWidget(cBridgeCheckBox);
 
         verticalLayout_8 = new QVBoxLayout();
         verticalLayout_8->setSpacing(10);
@@ -778,7 +784,7 @@ public:
         sizePolicy2.setHeightForWidth(offsetLabel_4->sizePolicy().hasHeightForWidth());
         offsetLabel_4->setSizePolicy(sizePolicy2);
         offsetLabel_4->setFont(font);
-        offsetLabel_4->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        offsetLabel_4->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_16->addWidget(offsetLabel_4);
 
@@ -807,7 +813,7 @@ public:
         offsetLabel_5->setSizePolicy(sizePolicy2);
         offsetLabel_5->setMinimumSize(QSize(120, 0));
         offsetLabel_5->setFont(font);
-        offsetLabel_5->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        offsetLabel_5->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_24->addWidget(offsetLabel_5);
 
@@ -836,7 +842,7 @@ public:
         offsetLabel_6->setSizePolicy(sizePolicy2);
         offsetLabel_6->setMinimumSize(QSize(120, 0));
         offsetLabel_6->setFont(font);
-        offsetLabel_6->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        offsetLabel_6->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_25->addWidget(offsetLabel_6);
 
@@ -858,16 +864,16 @@ public:
 
         horizontalLayout_26->addLayout(verticalLayout_8);
 
-        autoBtn1_4 = new QPushButton(offsetGroupBox_4);
-        autoBtn1_4->setObjectName(QString::fromUtf8("autoBtn1_4"));
-        sizePolicy1.setHeightForWidth(autoBtn1_4->sizePolicy().hasHeightForWidth());
-        autoBtn1_4->setSizePolicy(sizePolicy1);
-        autoBtn1_4->setMinimumSize(QSize(70, 30));
-        autoBtn1_4->setMaximumSize(QSize(70, 30));
-        autoBtn1_4->setFont(font);
-        autoBtn1_4->setStyleSheet(QString::fromUtf8(""));
+        cBridgeCheckAuto = new QPushButton(offsetGroupBox_4);
+        cBridgeCheckAuto->setObjectName(QString::fromUtf8("cBridgeCheckAuto"));
+        sizePolicy1.setHeightForWidth(cBridgeCheckAuto->sizePolicy().hasHeightForWidth());
+        cBridgeCheckAuto->setSizePolicy(sizePolicy1);
+        cBridgeCheckAuto->setMinimumSize(QSize(70, 30));
+        cBridgeCheckAuto->setMaximumSize(QSize(70, 30));
+        cBridgeCheckAuto->setFont(font);
+        cBridgeCheckAuto->setStyleSheet(QString::fromUtf8(""));
 
-        horizontalLayout_26->addWidget(autoBtn1_4);
+        horizontalLayout_26->addWidget(cBridgeCheckAuto);
 
 
         verticalLayout_9->addWidget(offsetGroupBox_4);
@@ -893,64 +899,62 @@ public:
         cellComboBox->setItemText(0, QCoreApplication::translate("CClampTabWidget", " \345\205\250\347\273\206\350\203\236", nullptr));
 
         cellComboBox->setCurrentText(QCoreApplication::translate("CClampTabWidget", " \345\205\250\347\273\206\350\203\236", nullptr));
-        checkBox_9->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
+        vMenCheckBox->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
         v_memLabel->setText(QCoreApplication::translate("CClampTabWidget", "V-mem", nullptr));
         vMimDoubleSpinBox->setPrefix(QString());
         vMimDoubleSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " mv", nullptr));
-        checkBox_8->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
+        vOffsetCheckBox->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
         offsetLabel->setText(QCoreApplication::translate("CClampTabWidget", "Offset", nullptr));
         offsetSpinBox->setPrefix(QString());
         offsetSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " mv", nullptr));
-        autoBtn1->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
+        vOffsetAuto->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
         cFastGrouBox->setTitle(QCoreApplication::translate("CClampTabWidget", "Cp \350\241\245\345\201\277", nullptr));
-        checkBox_7->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
+        vCpCheckBox->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
         MagLabel->setText(QCoreApplication::translate("CClampTabWidget", "Mag", nullptr));
         magSpinBox->setPrefix(QString());
         magSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " pF", nullptr));
         TauLabel->setText(QCoreApplication::translate("CClampTabWidget", "Tau", nullptr));
         TauSpinBox->setPrefix(QString());
         TauSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " \316\274s", nullptr));
-        autoBtn2->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
+        vCpAuto->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
         cSlowGroupBox->setTitle(QCoreApplication::translate("CClampTabWidget", "Cm \350\241\245\345\201\277", nullptr));
-        checkBox_2->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
+        vCmCheckBox->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
         label_2->setText(QCoreApplication::translate("CClampTabWidget", "Cm", nullptr));
-        cmSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " pF", nullptr));
-        cmSpinBox->setPrefix(QString());
-        rs_label->setText(QCoreApplication::translate("CClampTabWidget", "Rs     ", nullptr));
+        cmDoubleSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " pF", nullptr));
+        rs_label->setText(QCoreApplication::translate("CClampTabWidget", "    Rs     ", nullptr));
         rsSpinBox->setPrefix(QString());
         rsSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " M\316\251", nullptr));
-        autoBtn3->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
-        checkBox->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
-        label_6->setText(QCoreApplication::translate("CClampTabWidget", "Rs\350\241\245\345\201\277", nullptr));
-        currSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " %", nullptr));
-        currSpinBox->setPrefix(QString());
+        vCmAuto->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
+        vRsCheckBox->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
+        label_6->setText(QCoreApplication::translate("CClampTabWidget", "    Rs\350\241\245\345\201\277", nullptr));
+        currSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", "%", nullptr));
         label->setText(QCoreApplication::translate("CClampTabWidget", "Lag", nullptr));
         lagSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " \316\274s", nullptr));
-        pushButton->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
+        vRsAuto->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
         clampWidget->setTabText(clampWidget->indexOf(volTab), QCoreApplication::translate("CClampTabWidget", "\347\224\265\345\216\213\351\222\263", nullptr));
         basicParamGroupBox_2->setTitle(QCoreApplication::translate("CClampTabWidget", "\345\237\272\346\234\254\345\217\202\346\225\260", nullptr));
         mode_2->setText(QCoreApplication::translate("CClampTabWidget", "\346\250\241     \345\274\217", nullptr));
         cellComboBox_2->setItemText(0, QCoreApplication::translate("CClampTabWidget", " \345\205\250\347\273\206\350\203\236", nullptr));
 
         cellComboBox_2->setCurrentText(QCoreApplication::translate("CClampTabWidget", " \345\205\250\347\273\206\350\203\236", nullptr));
-        checkBox_6->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
+        cMenCheckBox->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
         v_memLabel_2->setText(QCoreApplication::translate("CClampTabWidget", "l-mem", nullptr));
         cMimDoubleSpinBox->setPrefix(QString());
         cMimDoubleSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " mv", nullptr));
         offsetGroupBox_2->setTitle(QString());
-        checkBox_5->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
+        cOffsetCheckBox->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
         offsetLabel_2->setText(QCoreApplication::translate("CClampTabWidget", "Offset", nullptr));
         cOffsetSpinBox->setPrefix(QString());
         cOffsetSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", "mv", nullptr));
-        autoBtn1_2->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
+        cOffsetAuto->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
         offsetGroupBox_3->setTitle(QCoreApplication::translate("CClampTabWidget", "Cp\350\241\245\345\201\277", nullptr));
-        checkBox_4->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
+        cCpCheckBox->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
         offsetLabel_3->setText(QCoreApplication::translate("CClampTabWidget", "Mag", nullptr));
         cMagSpinBox->setPrefix(QString());
         cMagSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", "pF", nullptr));
-        autoBtn1_3->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
+        cCpAuto->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
         offsetGroupBox_4->setTitle(QCoreApplication::translate("CClampTabWidget", "\346\241\245\345\271\263\350\241\241\346\240\241\346\255\243", nullptr));
-        checkBox_3->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
+        cBridgeCheckBox->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
         offsetLabel_4->setText(QCoreApplication::translate("CClampTabWidget", "\347\231\276\345\210\206\346\257\224", nullptr));
         cPercSpinBox->setPrefix(QString());
         cPercSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", "%", nullptr));
@@ -960,7 +964,7 @@ public:
         offsetLabel_6->setText(QCoreApplication::translate("CClampTabWidget", "Auto Bridge Dur", nullptr));
         cDurSpinBox->setPrefix(QString());
         cDurSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", "ms", nullptr));
-        autoBtn1_4->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
+        cBridgeCheckAuto->setText(QCoreApplication::translate("CClampTabWidget", "Auto", nullptr));
         clampWidget->setTabText(clampWidget->indexOf(curTab), QCoreApplication::translate("CClampTabWidget", "\347\224\265\346\265\201\351\222\263", nullptr));
     } // retranslateUi
 

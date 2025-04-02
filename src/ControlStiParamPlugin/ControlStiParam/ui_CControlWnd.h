@@ -39,7 +39,7 @@ public:
         gridLayout = new QGridLayout(controlWnd);
         gridLayout->setSpacing(0);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
+        gridLayout->setContentsMargins(0, 5, 0, 0);
         probeTabWidget = new QTabWidget(controlWnd);
         probeTabWidget->setObjectName(QString::fromUtf8("probeTabWidget"));
         probeTabWidget->setLayoutDirection(Qt::LeftToRight);

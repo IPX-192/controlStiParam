@@ -22,7 +22,7 @@ void CDataMonitorPanel::customInit()
     QVector<QString> vecTemp;
 
 
-    vecTemp << tr(u8" ")<<  tr(u8"探头112") << tr(u8"探头2");
+    vecTemp << tr(u8" ")<<  tr(u8"探头1") << tr(u8"探头2");
 
     setHeaderText(0, 0, vecTemp);
 
@@ -85,48 +85,4 @@ void CDataMonitorPanel::displayResultData()
     //setColItemType(6, cell::checkBox);  //暂时不用编辑框，用按钮
     setColItemType(6, cell::btn);
 
-
-
-    // //removeData();
-    // QVector<QString> vecTemp;
-    // QString strDate, strLastDate;
-    // int currentRow = 0;
-    // int colIndex = 0;
-
-    // vecTemp.clear();
-    // vecTemp<<"1"<< u8"50" << "/";
-
-    // setText(0, 0, vecTemp);
-
-
-    // vecTemp.clear();
-    // vecTemp<<"2"<< u8"57" << "/";
-
-    // setText(1, 0, vecTemp);
-    // vecTemp.clear();
-    // vecTemp<<"3"<< u8"22" << "/";
-
-    // setText(2, 0, vecTemp);
-    // vecTemp.clear();
-    // vecTemp<<"4"<< u8"56" << "/";
-
-    // setText(3, 0, vecTemp);
-    // vecTemp.clear();
-    // vecTemp<<"5"<< u8"20" << "/";
-
-    // setText(4, 0, vecTemp);
-    // vecTemp.clear();
-    // vecTemp<<"6"<< u8"20" << "/";
-
-    // setText(5, 0, vecTemp);
-
-    // vecTemp.clear();
-    // vecTemp<<"7"<< u8"20" << "/";
-
-    // setText(6, 0, vecTemp);
-
-    // vecTemp.clear();
-    // vecTemp<<"8"<< u8"20" << "/";
-
-    // setText(7, 0, vecTemp);
 }

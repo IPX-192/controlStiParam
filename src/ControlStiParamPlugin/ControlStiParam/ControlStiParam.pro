@@ -38,7 +38,6 @@ SOURCES += \
     CDataMonitorWnd.cpp \
     CMembraneTestControlArea.cpp \
     # CMonitorStatusComponent.cpp \
-    CMonitorWnd.cpp \
     CParamWnd.cpp \
     CStimualteWnd.cpp \
     Test.cpp
@@ -52,7 +51,6 @@ HEADERS += \
     CDataMonitorWnd.h \
     CMembraneTestControlArea.h \
     # CMonitorStatusComponent.h \
-    CMonitorWnd.h \
     CParamWnd.h \
     CStimualteWnd.h \
     ControlStiParam_global.h
@@ -141,7 +139,6 @@ FORMS += \
     CControlWnd.ui \
     CDataMonitorWnd.ui \
     CMembraneTestControlArea.ui \
-    CMonitorWnd.ui \
     CParamWnd.ui \
     CStimualteWnd.ui
 

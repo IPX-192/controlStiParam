@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>672</width>
-    <height>678</height>
+    <height>680</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -95,7 +95,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>80</width>
+                <width>100</width>
                 <height>0</height>
                </size>
               </property>
@@ -108,7 +108,7 @@
                <string>模     式</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -152,8 +152,11 @@
             <property name="spacing">
              <number>10</number>
             </property>
+            <property name="leftMargin">
+             <number>9</number>
+            </property>
             <item>
-             <widget class="QCheckBox" name="checkBox_9">
+             <widget class="QCheckBox" name="vMenCheckBox">
               <property name="text">
                <string>启用</string>
               </property>
@@ -169,7 +172,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>80</width>
+                <width>100</width>
                 <height>0</height>
                </size>
               </property>
@@ -183,7 +186,7 @@
                <string>V-mem</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -270,7 +273,7 @@
                <number>30</number>
               </property>
               <item>
-               <widget class="QCheckBox" name="checkBox_8">
+               <widget class="QCheckBox" name="vOffsetCheckBox">
                 <property name="text">
                  <string>启用</string>
                 </property>
@@ -299,7 +302,7 @@
                  <string>Offset</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -340,7 +343,7 @@
              </layout>
             </item>
             <item>
-             <widget class="QPushButton" name="autoBtn1">
+             <widget class="QPushButton" name="vOffsetAuto">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                 <horstretch>0</horstretch>
@@ -422,7 +425,7 @@
            <number>10</number>
           </property>
           <item>
-           <widget class="QCheckBox" name="checkBox_7">
+           <widget class="QCheckBox" name="vCpCheckBox">
             <property name="text">
              <string>启用</string>
             </property>
@@ -464,7 +467,7 @@
                    <string>Mag</string>
                   </property>
                   <property name="alignment">
-                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -527,7 +530,7 @@
                    <string>Tau</string>
                   </property>
                   <property name="alignment">
-                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -567,7 +570,7 @@
              </layout>
             </item>
             <item>
-             <widget class="QPushButton" name="autoBtn2">
+             <widget class="QPushButton" name="vCpAuto">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                 <horstretch>0</horstretch>
@@ -626,19 +629,19 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_21">
           <property name="leftMargin">
-           <number>10</number>
+           <number>16</number>
           </property>
           <property name="topMargin">
            <number>10</number>
           </property>
           <property name="rightMargin">
-           <number>10</number>
+           <number>16</number>
           </property>
           <property name="bottomMargin">
            <number>10</number>
           </property>
           <item>
-           <widget class="QCheckBox" name="checkBox_2">
+           <widget class="QCheckBox" name="vCmCheckBox">
             <property name="text">
              <string>启用</string>
             </property>
@@ -647,7 +650,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_18">
             <property name="rightMargin">
-             <number>10</number>
+             <number>0</number>
             </property>
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -680,12 +683,12 @@
                    <string>Cm</string>
                   </property>
                   <property name="alignment">
-                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QSpinBox" name="cmSpinBox">
+                 <widget class="QDoubleSpinBox" name="cmDoubleSpinBox">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -710,8 +713,8 @@
                   <property name="suffix">
                    <string> pF</string>
                   </property>
-                  <property name="prefix">
-                   <string/>
+                  <property name="decimals">
+                   <number>1</number>
                   </property>
                  </widget>
                 </item>
@@ -740,10 +743,10 @@
                    </size>
                   </property>
                   <property name="text">
-                   <string>Rs     </string>
+                   <string>    Rs     </string>
                   </property>
                   <property name="alignment">
-                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -786,7 +789,7 @@
              </layout>
             </item>
             <item>
-             <widget class="QPushButton" name="autoBtn3">
+             <widget class="QPushButton" name="vCmAuto">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                 <horstretch>0</horstretch>
@@ -835,8 +838,20 @@
           </font>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_20">
+          <property name="leftMargin">
+           <number>16</number>
+          </property>
+          <property name="topMargin">
+           <number>10</number>
+          </property>
+          <property name="rightMargin">
+           <number>16</number>
+          </property>
+          <property name="bottomMargin">
+           <number>10</number>
+          </property>
           <item>
-           <widget class="QCheckBox" name="checkBox">
+           <widget class="QCheckBox" name="vRsCheckBox">
             <property name="text">
              <string>启用</string>
             </property>
@@ -845,7 +860,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_10">
             <property name="rightMargin">
-             <number>10</number>
+             <number>0</number>
             </property>
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -875,15 +890,15 @@
                    </size>
                   </property>
                   <property name="text">
-                   <string>Rs补偿</string>
+                   <string>    Rs补偿</string>
                   </property>
                   <property name="alignment">
-                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QSpinBox" name="currSpinBox">
+                 <widget class="QDoubleSpinBox" name="currSpinBox">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -903,10 +918,10 @@
                    </size>
                   </property>
                   <property name="suffix">
-                   <string> %</string>
+                   <string>%</string>
                   </property>
-                  <property name="prefix">
-                   <string/>
+                  <property name="decimals">
+                   <number>0</number>
                   </property>
                  </widget>
                 </item>
@@ -914,6 +929,9 @@
               </item>
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_11">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
                 <property name="rightMargin">
                  <number>30</number>
                 </property>
@@ -934,6 +952,9 @@
                   <property name="text">
                    <string>Lag</string>
                   </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
                  </widget>
                 </item>
                 <item>
@@ -946,7 +967,7 @@
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>122</width>
+                    <width>126</width>
                     <height>30</height>
                    </size>
                   </property>
@@ -960,7 +981,7 @@
              </layout>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton">
+             <widget class="QPushButton" name="vRsAuto">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -1062,7 +1083,7 @@
                <string>模     式</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -1100,8 +1121,11 @@
             <property name="spacing">
              <number>10</number>
             </property>
+            <property name="leftMargin">
+             <number>6</number>
+            </property>
             <item>
-             <widget class="QCheckBox" name="checkBox_6">
+             <widget class="QCheckBox" name="cMenCheckBox">
               <property name="text">
                <string>启用</string>
               </property>
@@ -1125,7 +1149,7 @@
                <string>l-mem</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -1187,7 +1211,7 @@
            <number>10</number>
           </property>
           <item>
-           <widget class="QCheckBox" name="checkBox_5">
+           <widget class="QCheckBox" name="cOffsetCheckBox">
             <property name="text">
              <string>启用</string>
             </property>
@@ -1218,7 +1242,7 @@
                <string>Offset</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -1253,7 +1277,7 @@
            </layout>
           </item>
           <item>
-           <widget class="QPushButton" name="autoBtn1_2">
+           <widget class="QPushButton" name="cOffsetAuto">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
               <horstretch>0</horstretch>
@@ -1313,7 +1337,7 @@
            <number>10</number>
           </property>
           <item>
-           <widget class="QCheckBox" name="checkBox_4">
+           <widget class="QCheckBox" name="cCpCheckBox">
             <property name="text">
              <string>启用</string>
             </property>
@@ -1344,7 +1368,7 @@
                <string>Mag</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -1379,7 +1403,7 @@
            </layout>
           </item>
           <item>
-           <widget class="QPushButton" name="autoBtn1_3">
+           <widget class="QPushButton" name="cCpAuto">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
               <horstretch>0</horstretch>
@@ -1427,7 +1451,7 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_26">
           <item>
-           <widget class="QCheckBox" name="checkBox_3">
+           <widget class="QCheckBox" name="cBridgeCheckBox">
             <property name="text">
              <string>启用</string>
             </property>
@@ -1463,7 +1487,7 @@
                  <string>百分比</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -1528,7 +1552,7 @@
                  <string>Auto Bridge Ampl</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -1593,7 +1617,7 @@
                  <string>Auto Bridge Dur</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -1630,7 +1654,7 @@
            </layout>
           </item>
           <item>
-           <widget class="QPushButton" name="autoBtn1_4">
+           <widget class="QPushButton" name="cBridgeCheckAuto">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
               <horstretch>0</horstretch>

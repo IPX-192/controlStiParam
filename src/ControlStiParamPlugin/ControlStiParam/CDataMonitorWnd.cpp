@@ -15,11 +15,11 @@ CDataMonitorWnd::CDataMonitorWnd(QWidget *parent)
 
     this->setStyleSheet(styleSheet);
 
-    QVector<QString> vecHorizontalHeaderStr = {u8"探头11", u8"探头2"};
-    QVector<QString> vecVerticalHeaderStr = {u8"Rreal\n(GΩ)", u8"Rs\n(MΩ)", u8"Rm\n(MΩ)", u8"Cm\n(pF)"};
+    QVector<QString> vecHorizontalHeaderStr = {u8"探头1", u8"探头2"};
+    QVector<QString> vecVerticalHeaderStr = {u8"Rseal\n(GΩ)", u8"Rp\n(MΩ)", u8"Rs\n(MΩ)", u8"Rm\n(MΩ)", u8"Cm\n(pF)"};
 
     setHeaderText(0, 0, vecHorizontalHeaderStr, true);
-    setHeaderText(0, 0, vecVerticalHeaderStr, false);
+    //setHeaderText(0, 0, vecVerticalHeaderStr, false);
 
     this->setStyleSheet("#dataMonitorTableView {"
                         "   alternate-background-color: #535353;" // tableView1 双行颜色
@@ -48,6 +48,17 @@ void CDataMonitorWnd::setHeaderText(const int &row, const int &col, const QVecto
     {
         ui->dataMonitorTableView->setHeaderText(row+1,col,vecConetent, bHorizontal);
     }
+}
+
+void CDataMonitorWnd::setText(const int &row, const int &col, const QVector<QString> &vecData)
+{
+
+    ui->dataMonitorTableView->setText(row,col,vecData);
+}
+
+void CDataMonitorWnd::test()
+{
+    qDebug()<<"ffffffffffffffffssss";
 }
 
 

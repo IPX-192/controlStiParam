@@ -14,6 +14,9 @@ class CControlWnd : public QWidget
 public:
     explicit CControlWnd(QWidget *parent = nullptr);
     ~CControlWnd();
+
+    CClampTabWidget*  getClampTab();
+
 protected:
     void resizeEvent(QResizeEvent *event);
 private:

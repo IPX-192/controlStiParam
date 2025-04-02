@@ -1,6 +1,5 @@
 #include"CMembraneTestControlArea.h"
 #include"CDataMonitorWnd.h"
-#include"CMonitorWnd.h"
 #include<QApplication>
 #include<QFile>
 #include<QString>
@@ -21,8 +20,6 @@ int main(int argc, char *argv[])
     a.setStyleSheet(loadQSS());
     CMembraneTestControlArea* p =new CMembraneTestControlArea;
     p->show();
-    // CMonitorWnd* p =new CMonitorWnd;
-    // p->show();
 
     return a.exec();
 

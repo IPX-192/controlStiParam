@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QWidget>
 #include "CDataMonitorPanel.h"
@@ -22,13 +23,15 @@ class Ui_dataMonitorWnd
 {
 public:
     QGridLayout *gridLayout;
+    QGroupBox *groupBox;
+    QGridLayout *gridLayout_2;
     CDataMonitorPanel *dataMonitorTableView;
 
     void setupUi(QWidget *dataMonitorWnd)
     {
         if (dataMonitorWnd->objectName().isEmpty())
             dataMonitorWnd->setObjectName(QString::fromUtf8("dataMonitorWnd"));
-        dataMonitorWnd->resize(343, 220);
+        dataMonitorWnd->resize(280, 220);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -37,14 +40,24 @@ public:
         dataMonitorWnd->setMinimumSize(QSize(0, 0));
         dataMonitorWnd->setMaximumSize(QSize(16777215, 220));
         gridLayout = new QGridLayout(dataMonitorWnd);
+        gridLayout->setSpacing(0);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        gridLayout->setContentsMargins(15, 15, 15, 15);
-        dataMonitorTableView = new CDataMonitorPanel(dataMonitorWnd);
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        groupBox = new QGroupBox(dataMonitorWnd);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        gridLayout_2 = new QGridLayout(groupBox);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        gridLayout_2->setHorizontalSpacing(0);
+        gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        dataMonitorTableView = new CDataMonitorPanel(groupBox);
         dataMonitorTableView->setObjectName(QString::fromUtf8("dataMonitorTableView"));
-        dataMonitorTableView->setMaximumSize(QSize(16777215, 195));
+        dataMonitorTableView->setMaximumSize(QSize(16777215, 220));
         dataMonitorTableView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-        gridLayout->addWidget(dataMonitorTableView, 0, 0, 1, 1);
+        gridLayout_2->addWidget(dataMonitorTableView, 0, 0, 1, 1);
+
+
+        gridLayout->addWidget(groupBox, 0, 0, 1, 1);
 
 
         retranslateUi(dataMonitorWnd);
@@ -55,6 +68,7 @@ public:
     void retranslateUi(QWidget *dataMonitorWnd)
     {
         dataMonitorWnd->setWindowTitle(QCoreApplication::translate("dataMonitorWnd", "\346\225\260\346\215\256\347\233\221\350\247\206", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("dataMonitorWnd", "\346\225\260\346\215\256\347\233\221\350\247\206", nullptr));
     } // retranslateUi
 
 };

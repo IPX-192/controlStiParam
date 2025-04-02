@@ -49,12 +49,43 @@
 }
 
 
-#MembraneTestControlArea > QPushButton:pressed {
+#MembraneTestControlArea  QPushButton:pressed {
 color: #5aa4f0;
 background: #2d2d2d;;      /* 按钮背景颜色 */
 }
 
+#MembraneTestControlArea  QRadioButton{
+color: #ffffff;
+line-height: 40px;
+}
 
+#MembraneTestControlArea QRadioButton:checked
+{
+    color: #ffffff;
+}
+
+#MembraneTestControlArea QComboBox{
+background: #2d2d2d;
+border: 1px solid #5d5d5d;
+border-radius: 2px;
+color:white;
+padding-left: 2ex;
+}
+
+
+#MembraneTestControlArea  QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right center; /* 放于右方顶部 */
+    width: 15px; /* 设置按钮宽度 */
+    height: 15px; /* 设置按钮高度 */
+    border:none;
+}
+
+#MembraneTestControlArea  QComboBox::down-arrow {
+    image: url(:/img/resource/tool/arrowDown.png); /* 替换为您的图片路径 */
+    width: 15px; /* 图片宽度 */
+    height: 15px; /* 图片高度 */
+}
 
 #probeTabWidget QTabWidget::tab-bar {
     border: 0.5px solid black;
@@ -76,8 +107,8 @@ background: #2d2d2d;;      /* 按钮背景颜色 */
 }
 
 #probeTabWidget QTabBar::tab {
-    width:222px;
-    height: 40px; /* 固定高度 */
+    width:150px;
+    height: 35px; /* 固定高度 */
     text-align: center; /* 文字居中 */
     border: 1px solid #5D5D5D; /* 黑色边框 */
     background: #383838; /* 背景色 */
@@ -131,8 +162,8 @@ border-radius: 1px;
 
 #clampWidget QTabBar::tab {
     min-width: 46px;
-    width:150px;
-    height:40px;
+    width:120px;
+    height:35px;
     padding: 0; /* 移除内边距 */
     margin: 0; /* 移除外边距 */
     text-align: center; /* 文字居中 */

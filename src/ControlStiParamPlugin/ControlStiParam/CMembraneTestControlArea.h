@@ -8,7 +8,6 @@
 #include"CDataMonitorWnd.h"
 #include"ui_CMembraneTestControlArea.h"
 
-#include"CMonitorWnd.h"
 namespace Ui {
 class CMembraneTestControlArea;
 }
@@ -23,6 +22,12 @@ class CMembraneTestControlArea : public QWidget
         PARAM
     };
 
+    enum STAGE{
+        BATH,
+        SEAL,
+        CELL
+    };
+
 
 public:
     explicit CMembraneTestControlArea(QWidget *parent = nullptr);
@@ -31,6 +36,16 @@ public:
 private slots:
 
     void on_full_tab_currentChanged(int index);
+
+    void onRadioButtonToggled(bool checked);
+
+    void on_pushButton_clicked();
+
+    //接收来自电压钳或者电流钳的参数值
+    void onSigSetClampParams(QString name,double value);
+
+    //接收来自参数区的设置参数值
+    void onSetStimualteParams(QString name,double value);
 
 protected:
     void setWidgetToFillArea(QWidget* targetWidget, QWidget* widgetToFill);
@@ -46,7 +61,12 @@ private:
     Param* m_wndParam{nullptr};
     sampleParamArea* m_wndSampleArea{nullptr};
     CDataMonitorWnd* m_wndDataMonitor{nullptr};
-    CMonitorWnd* m_wndMonitor{nullptr};
+    int m_iCurStage{STAGE::BATH};
+    float m_fRpValue{10.0};
+    float m_fRsealValue{100.0};
+    float m_fRsValue{100.0};
+    float m_fRmValue{0.0};
+    float m_fCmValue{0.0};
 };
 
 #endif // CALLTABVIEW_H

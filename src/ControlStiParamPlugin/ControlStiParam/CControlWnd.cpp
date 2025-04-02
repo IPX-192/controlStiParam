@@ -31,6 +31,14 @@ CControlWnd::~CControlWnd()
     delete ui;
 }
 
+CClampTabWidget* CControlWnd::getClampTab()
+{
+    if(ui->probe1Tab != nullptr)
+    {
+        return ui->probe1Tab;
+    }
+}
+
 void CControlWnd::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);

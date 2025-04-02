@@ -18,7 +18,9 @@ public:
 public:
     void setHeaderText(const int &row, const int &col, const QVector<QString> &vecConetent, bool bHorizontal);
 
-    void setText(const int &row, const int &col, const QVector<QVector<QString> > &vecData);
+    void setText(const int &row, const int &col, const QVector<QString> &vecData);
+
+    void test();
 
 protected:
 

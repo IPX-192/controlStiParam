@@ -1,5 +1,6 @@
 ﻿#include "CMembraneTestControlArea.h"
-#include<QFile>
+#include <QFile>
+#include <QDebug>
 #pragma execution_character_set("utf-8")
 CMembraneTestControlArea::CMembraneTestControlArea(QWidget *parent)
     : QWidget(parent)
@@ -15,22 +16,15 @@ CMembraneTestControlArea::CMembraneTestControlArea(QWidget *parent)
 
     this->setStyleSheet(styleSheet);
 
-
     initUI();
 
 }
-
 
 
 CMembraneTestControlArea::~CMembraneTestControlArea()
 {
     delete ui;
 }
-
-
-
-
-
 
 
 void CMembraneTestControlArea::setWidgetToFillArea(QWidget* targetWidget, QWidget* widgetToFill)
@@ -95,10 +89,16 @@ void CMembraneTestControlArea::initUI()
     setWidgetToFillArea(ui->full_tab->currentWidget(), ui->controlWidget);
 
     ui->full_tab->tabBar()->setCurrentIndex(0);
+
+    ui->model_Range->addItems(QStringList() << "20nA/500M"<<"200nA/50M");
+
+    // 连接所有 RadioButton 的信号槽
+    connect(ui->radioBtnBath, &QRadioButton::toggled, this, &CMembraneTestControlArea::onRadioButtonToggled);
+    connect(ui->radioBtnSeal, &QRadioButton::toggled, this, &CMembraneTestControlArea::onRadioButtonToggled);
+    connect(ui->radioBtnCell, &QRadioButton::toggled, this, &CMembraneTestControlArea::onRadioButtonToggled);
+
+
 }
-
-
-
 
 
 void CMembraneTestControlArea::on_full_tab_currentChanged(int index)
@@ -113,6 +113,7 @@ void CMembraneTestControlArea::on_full_tab_currentChanged(int index)
         this->setWindowTitle(u8"膜测试控制区");
         ui->controlWidget = m_wndControl;
         setWidgetToFillArea(ui->full_tab->currentWidget(), ui->controlWidget);
+        connect(m_wndControl->getClampTab(),&CClampTabWidget::sigSetClampParams,this,&CMembraneTestControlArea::onSigSetClampParams);
         break;
 
     case STIMULATE:
@@ -124,6 +125,7 @@ void CMembraneTestControlArea::on_full_tab_currentChanged(int index)
         this->setWindowTitle(u8"采样参数区");
         ui->stiWidget = m_wndSampleArea;
         setWidgetToFillArea(ui->full_tab->currentWidget(), ui->stiWidget);
+        connect(m_wndSampleArea,&sampleParamArea::sigSetStimualteParams,this,&CMembraneTestControlArea::onSetStimualteParams);
         break;
 
     case PARAM:
@@ -138,10 +140,86 @@ void CMembraneTestControlArea::on_full_tab_currentChanged(int index)
     }
 }
 
+void CMembraneTestControlArea::onRadioButtonToggled(bool checked)
+{
+    QRadioButton *senderRadio = qobject_cast<QRadioButton*>(sender());
+    if (checked && senderRadio) {
+        qDebug() << "选中了：" << senderRadio->text();
+        if(senderRadio->text() == "BATH")
+        {
+            m_iCurStage = STAGE::BATH;
+        }
+        else if(senderRadio->text() == "SEAL")
+        {
+            m_iCurStage = STAGE::SEAL;
+        }
+        else
+        {
+            m_iCurStage = STAGE::CELL;
+        }
+    }
+}
+
 void CMembraneTestControlArea::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
     ui->full_tab->tabBar()->setExpanding(true);
     ui->full_tab->tabBar()->setUsesScrollButtons(false); // 如果不需要滚动按钮，可以设置为false
+}
+
+
+void CMembraneTestControlArea::on_pushButton_clicked()
+{
+    QVector<QString> vecTemp;
+    if(m_iCurStage == STAGE::BATH)
+    {
+        vecTemp<<u8"Rp\n(MΩ)"<<QString::number(m_fRpValue, 'f', 1);
+        ui->dataMonitorWidget->setText(0,0,vecTemp);
+        vecTemp.clear();
+        vecTemp<<u8"Rm\n(MΩ)"<<"OFF";
+        ui->dataMonitorWidget->setText(1,0,vecTemp);
+        vecTemp.clear();
+        vecTemp<<u8"Cm\n(pF)"<<"OFF";
+        ui->dataMonitorWidget->setText(2,0,vecTemp);
+
+        m_fRpValue += 1.0;
+    }
+    else if(m_iCurStage == STAGE::SEAL)
+    {
+        vecTemp<<u8"Rseal\n(MΩ)"<<QString::number(m_fRsealValue, 'f', 1);
+        ui->dataMonitorWidget->setText(0,0,vecTemp);
+        vecTemp.clear();
+        vecTemp<<u8"Rm\n(MΩ)"<<"OFF";
+        ui->dataMonitorWidget->setText(1,0,vecTemp);
+        vecTemp.clear();
+        vecTemp<<u8"Cm\n(pF)"<<"OFF";
+        ui->dataMonitorWidget->setText(2,0,vecTemp);
+    }
+    else
+    {
+        vecTemp<<u8"Rs\n(MΩ)"<<QString::number(m_fRsValue, 'f', 1);
+        ui->dataMonitorWidget->setText(0,0,vecTemp);
+        vecTemp.clear();
+        vecTemp<<u8"Rm\n(MΩ)"<<QString::number(m_fRmValue, 'f', 1);
+        ui->dataMonitorWidget->setText(1,0,vecTemp);
+        vecTemp.clear();
+        vecTemp<<u8"Cm\n(pF)"<<QString::number(m_fCmValue, 'f', 1);
+        ui->dataMonitorWidget->setText(2,0,vecTemp);
+    }
+}
+
+void CMembraneTestControlArea::onSigSetClampParams(QString name, double value)
+{
+    qDebug()<<"dddddd1"<<name << "sssssssssrrr1 "<<value;
+}
+
+void CMembraneTestControlArea::onSetStimualteParams(QString name, double value)
+{
+    qDebug()<<"dddddd2  "<<name << "sssssssssrrr2 "<<value;
+}
+
+void CMembraneTestControlArea::on_model_Range_currentIndexChanged(int index)
+{
+
 }
 
