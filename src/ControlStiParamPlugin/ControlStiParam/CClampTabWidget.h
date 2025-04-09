@@ -20,10 +20,12 @@ public:
 
     void initialize();
 
+    void setCellCompensation(int rangeType);
+
+    void updateClampParams(QString name,double value);
+
 signals:
     void sigSetClampParams(QString name,double value);
-
-    void sigSetClampAutoParams(QString name);
 
 private slots:
 

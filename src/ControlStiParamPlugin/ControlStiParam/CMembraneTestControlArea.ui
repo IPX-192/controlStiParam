@@ -18,19 +18,19 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <property name="spacing">
-    <number>10</number>
+    <number>0</number>
    </property>
    <property name="leftMargin">
-    <number>10</number>
+    <number>0</number>
    </property>
    <property name="topMargin">
-    <number>5</number>
+    <number>0</number>
    </property>
    <property name="rightMargin">
-    <number>10</number>
+    <number>0</number>
    </property>
    <property name="bottomMargin">
-    <number>10</number>
+    <number>0</number>
    </property>
    <item>
     <widget class="QGroupBox" name="groupBox">
@@ -45,16 +45,16 @@
        <number>10</number>
       </property>
       <property name="leftMargin">
-       <number>10</number>
+       <number>20</number>
       </property>
       <property name="topMargin">
-       <number>5</number>
-      </property>
-      <property name="rightMargin">
        <number>10</number>
       </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
       <property name="bottomMargin">
-       <number>5</number>
+       <number>10</number>
       </property>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,5">
@@ -101,13 +101,6 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton">
-             <property name="text">
-              <string>调试</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <widget class="QLabel" name="label">
              <property name="maximumSize">
               <size>
@@ -136,6 +129,27 @@
              </property>
             </widget>
            </item>
+           <item>
+            <widget class="QPushButton" name="StartBtn">
+             <property name="text">
+              <string>Start</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="StopBtn">
+             <property name="text">
+              <string>Stop</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="ResetBtn">
+             <property name="text">
+              <string>Reset</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
@@ -160,7 +174,7 @@
          <enum>QTabWidget::Rounded</enum>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="controlWidget">
          <attribute name="title">

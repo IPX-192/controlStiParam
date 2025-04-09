@@ -1,7 +1,7 @@
 QT -= gui
 QT += core widgets concurrent
 
-TARGET = ControlStiParam
+TARGET = ControlStiParamTest
 
 QMAKE_CXXFLAGS_RELEASE = $$QMAKE_CFLAGS_RELEASE_WITH_DEBUGINFO
 QMAKE_LFLAGS_RELEASE = $$QMAKE_LFLAGS_RELEASE_WITH_DEBUGINFO
@@ -9,14 +9,14 @@ QMAKE_LFLAGS_RELEASE = $$QMAKE_LFLAGS_RELEASE_WITH_DEBUGINFO
 
 #生成文件名称
 CONFIG(debug , debug|release){
-    TARGET  = ControlStiParamd
+    TARGET  = ControlStiParamTestd
     DESTDIR = $$PWD/../../../build/MainFrame/bin/x64/debug/plugins
 }else{
-    TARGET  = ControlStiParam
+    TARGET  = ControlStiParamTest
     DESTDIR = $$PWD/../../../build/MainFrame/bin/x64/release/plugins
 }
 
-TEMPLATE = app
+TEMPLATE = lib
 
 DEFINES += CONTROLSTIPARAM_LIBRARY
 
@@ -30,27 +30,27 @@ DISTFILES += \
 
 
 SOURCES += \
-    # CControlStiParamComponent.cpp \
-    # CControlStiParamPlugin.cpp \
+    CControlStiParamComponent.cpp \
+    CControlStiParamPlugin.cpp \
     CClampTabWidget.cpp \
     CControlWnd.cpp \
     CDataMonitorPanel.cpp \
     CDataMonitorWnd.cpp \
     CMembraneTestControlArea.cpp \
-    # CMonitorStatusComponent.cpp \
     CParamWnd.cpp \
     CStimualteWnd.cpp \
-    Test.cpp
+    # Test.cpp
 
 HEADERS += \
-    # CControlStiParamComponent.h \
-    # CControlStiParamPlugin.h \
+    CControlStiParamComponent.h \
+    CControlStiParamPlugin.h \
     CClampTabWidget.h \
+    CControlStiParamComponent.h \
+    CControlStiParamPlugin.h \
     CControlWnd.h \
     CDataMonitorPanel.h \
     CDataMonitorWnd.h \
     CMembraneTestControlArea.h \
-    # CMonitorStatusComponent.h \
     CParamWnd.h \
     CStimualteWnd.h \
     ControlStiParam_global.h

@@ -68,12 +68,12 @@ public:
     {
         if (stiParamWnd->objectName().isEmpty())
             stiParamWnd->setObjectName(QString::fromUtf8("stiParamWnd"));
-        stiParamWnd->resize(321, 807);
-        stiParamWnd->setMaximumSize(QSize(16777215, 852));
+        stiParamWnd->resize(338, 722);
+        stiParamWnd->setMaximumSize(QSize(16777215, 16777215));
         gridLayout_3 = new QGridLayout(stiParamWnd);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        gridLayout_3->setVerticalSpacing(30);
-        gridLayout_3->setContentsMargins(-1, -1, -1, 30);
+        gridLayout_3->setVerticalSpacing(6);
+        gridLayout_3->setContentsMargins(-1, -1, -1, 20);
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(20);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));

@@ -9,6 +9,7 @@ CClampTabWidget::CClampTabWidget(QWidget *parent)
     ui->setupUi(this);
     ui->clampWidget->tabBar()->setUsesScrollButtons(false); // 如果不需要滚动按钮，可以设置为false
 
+    ui->clampWidget->setCurrentIndex(0);
 
     //默认值设置
     ui->offsetSpinBox->setValue(0.0);
@@ -24,23 +25,23 @@ CClampTabWidget::CClampTabWidget(QWidget *parent)
     ui->vMimDoubleSpinBox->setRange(-750.0,750.0);
 
     ui->cMimDoubleSpinBox->setValue(0.0);
-    ui->cMimDoubleSpinBox->setSingleStep(0.1);
-    ui->cMimDoubleSpinBox->setRange(-750.0,750.0);
+    ui->cMimDoubleSpinBox->setSingleStep(1);
+    ui->cMimDoubleSpinBox->setRange(-20000.0,20000.0);
 
     ui->magSpinBox->setValue(5.0);
     ui->magSpinBox->setSingleStep(0.1);
-    ui->magSpinBox->setRange(0,200);
+    ui->magSpinBox->setRange(0,20);
 
     ui->TauSpinBox->setValue(4.0);
     ui->TauSpinBox->setSingleStep(0.1);
-    ui->TauSpinBox->setRange(1,10);
+    ui->TauSpinBox->setRange(0,10);
 
     ui->cmDoubleSpinBox->setValue(35.0);
-    ui->cmDoubleSpinBox->setSingleStep(0.1);
-    ui->cmDoubleSpinBox->setRange(0.1,500.0);
+    ui->cmDoubleSpinBox->setSingleStep(0.01);
+    ui->cmDoubleSpinBox->setRange(1.0,100.0);
 
     ui->rsSpinBox->setValue(10.0);
-    ui->rsSpinBox->setSingleStep(0.1);
+    ui->rsSpinBox->setSingleStep(0.01);
     ui->rsSpinBox->setRange(0.1,100);
 
     ui->currSpinBox->setValue(76);
@@ -144,9 +145,61 @@ void CClampTabWidget::initialize()
             connect(pushBtn, &QPushButton::clicked, [this, pushBtn]()
                     {
                         // 在这里处理点击事件
-                        qDebug() << "Auto button clicked!" << pushBtn->objectName();;
+                        emit sigSetClampParams(pushBtn->objectName(),1);
                     });
         }
+    }
+}
+
+void CClampTabWidget::setCellCompensation(int rangeType)
+{
+    if(rangeType == 0)
+    {
+        ui->rsSpinBox->setValue(10.0);
+        ui->rsSpinBox->setSingleStep(0.01);
+        ui->rsSpinBox->setRange(0.1,100.0);
+
+        ui->cmDoubleSpinBox->setValue(35.0);
+        ui->cmDoubleSpinBox->setSingleStep(0.01);
+        ui->cmDoubleSpinBox->setRange(1.0,100.0);
+
+        ui->cMimDoubleSpinBox->setValue(0.0);
+        ui->cMimDoubleSpinBox->setSingleStep(1);
+        ui->cMimDoubleSpinBox->setRange(-20000.0,20000.0);
+    }
+    else
+    {
+        ui->rsSpinBox->setValue(1.0);
+        ui->rsSpinBox->setSingleStep(0.01);
+        ui->rsSpinBox->setRange(0.1,10);
+
+        ui->cmDoubleSpinBox->setValue(35.0);
+        ui->cmDoubleSpinBox->setSingleStep(0.01);
+        ui->cmDoubleSpinBox->setRange(1.0,500.0);
+
+        ui->cMimDoubleSpinBox->setValue(0.0);
+        ui->cMimDoubleSpinBox->setSingleStep(1);
+        ui->cMimDoubleSpinBox->setRange(-200000.0,200000.0);
+    }
+}
+
+void CClampTabWidget::updateClampParams(QString name, double value)
+{
+    // 查找具有指定对象名的子控件
+    QWidget* widget = findChild<QWidget*>(name);
+    if (!widget) {
+        qWarning() << "Widget with name" << name << "not found";
+        return;
+    }
+
+
+    // 如果是 QSpinBox 或 QDoubleSpinBox
+    if (qobject_cast<QSpinBox*>(widget)) {
+        qobject_cast<QSpinBox*>(widget)->setValue(value);
+    }
+    else if (qobject_cast<QDoubleSpinBox*>(widget))
+    {
+        qobject_cast<QDoubleSpinBox*>(widget)->setValue(value);
     }
 }
 

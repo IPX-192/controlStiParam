@@ -36,9 +36,11 @@ public:
     QRadioButton *radioBtnBath;
     QRadioButton *radioBtnSeal;
     QRadioButton *radioBtnCell;
-    QPushButton *pushButton;
     QLabel *label;
     QComboBox *model_Range;
+    QPushButton *StartBtn;
+    QPushButton *StopBtn;
+    QPushButton *ResetBtn;
     CDataMonitorWnd *dataMonitorWidget;
     QTabWidget *full_tab;
     QWidget *controlWidget;
@@ -52,16 +54,16 @@ public:
         MembraneTestControlArea->resize(402, 760);
         MembraneTestControlArea->setLayoutDirection(Qt::LeftToRight);
         verticalLayout_2 = new QVBoxLayout(MembraneTestControlArea);
-        verticalLayout_2->setSpacing(10);
+        verticalLayout_2->setSpacing(0);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(10, 5, 10, 10);
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         groupBox = new QGroupBox(MembraneTestControlArea);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         groupBox->setStyleSheet(QString::fromUtf8(""));
         verticalLayout = new QVBoxLayout(groupBox);
         verticalLayout->setSpacing(10);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(10, 5, 10, 5);
+        verticalLayout->setContentsMargins(20, 10, 20, 10);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         widget_2 = new QWidget(groupBox);
@@ -86,11 +88,6 @@ public:
 
         verticalLayout_3->addWidget(radioBtnCell);
 
-        pushButton = new QPushButton(widget_2);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-
-        verticalLayout_3->addWidget(pushButton);
-
         label = new QLabel(widget_2);
         label->setObjectName(QString::fromUtf8("label"));
         label->setMaximumSize(QSize(16777215, 20));
@@ -104,6 +101,21 @@ public:
         model_Range->setMinimumSize(QSize(0, 30));
 
         verticalLayout_3->addWidget(model_Range);
+
+        StartBtn = new QPushButton(widget_2);
+        StartBtn->setObjectName(QString::fromUtf8("StartBtn"));
+
+        verticalLayout_3->addWidget(StartBtn);
+
+        StopBtn = new QPushButton(widget_2);
+        StopBtn->setObjectName(QString::fromUtf8("StopBtn"));
+
+        verticalLayout_3->addWidget(StopBtn);
+
+        ResetBtn = new QPushButton(widget_2);
+        ResetBtn->setObjectName(QString::fromUtf8("ResetBtn"));
+
+        verticalLayout_3->addWidget(ResetBtn);
 
 
         horizontalLayout->addWidget(widget_2);
@@ -141,7 +153,7 @@ public:
 
         retranslateUi(MembraneTestControlArea);
 
-        full_tab->setCurrentIndex(1);
+        full_tab->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MembraneTestControlArea);
@@ -154,8 +166,10 @@ public:
         radioBtnBath->setText(QCoreApplication::translate("MembraneTestControlArea", "BATH", nullptr));
         radioBtnSeal->setText(QCoreApplication::translate("MembraneTestControlArea", "SEAL", nullptr));
         radioBtnCell->setText(QCoreApplication::translate("MembraneTestControlArea", "CELL", nullptr));
-        pushButton->setText(QCoreApplication::translate("MembraneTestControlArea", "\350\260\203\350\257\225", nullptr));
         label->setText(QCoreApplication::translate("MembraneTestControlArea", "Range:", nullptr));
+        StartBtn->setText(QCoreApplication::translate("MembraneTestControlArea", "Start", nullptr));
+        StopBtn->setText(QCoreApplication::translate("MembraneTestControlArea", "Stop", nullptr));
+        ResetBtn->setText(QCoreApplication::translate("MembraneTestControlArea", "Reset", nullptr));
         full_tab->setTabText(full_tab->indexOf(controlWidget), QCoreApplication::translate("MembraneTestControlArea", "\346\216\247\345\210\266", nullptr));
         full_tab->setTabText(full_tab->indexOf(stiWidget), QCoreApplication::translate("MembraneTestControlArea", "\345\210\272\346\277\200", nullptr));
         full_tab->setTabText(full_tab->indexOf(paramWidget), QCoreApplication::translate("MembraneTestControlArea", "\345\217\202\346\225\260", nullptr));

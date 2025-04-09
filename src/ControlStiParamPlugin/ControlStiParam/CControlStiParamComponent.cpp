@@ -23,7 +23,9 @@ CControlStiParamComponent::CControlStiParamComponent(Plugin::CComponentInfo &inf
 
     m_pDisplayWidget = m_pControlParamWnd;
 
-//    setStyleSheet(loadQSS());
+    connect(m_pControlParamWnd,&CMembraneTestControlArea::sigControlChannelSFR,this,&CControlStiParamComponent::sigControlChannelSFR);
+
+    //    setStyleSheet(loadQSS());
 }
 
 
@@ -39,10 +41,26 @@ void CControlStiParamComponent::onRunStatusChanged()
 
 void CControlStiParamComponent::onSettingExperiment(Experiment::CExperiment *pInExperiment)
 {
-
+    m_pExperiment = pInExperiment;
 }
 
 void CControlStiParamComponent::show()
 {
     m_pDisplayWidget->show();
+}
+
+void CControlStiParamComponent::onUpdateChannelSFR(std::map<unsigned int, float> mapParams)
+{
+    for (const auto& pair : mapParams)
+    {
+        m_pControlParamWnd->updateChannelSFR(pair.first,pair.second);
+    }
+}
+
+void CControlStiParamComponent::setExperimentPara(QVariantMap varParams)
+{
+    if(m_pExperiment != nullptr)
+    {
+        m_pExperiment->setStimulateParameter(CExpStimulateParameter::create(varParams));
+    }
 }

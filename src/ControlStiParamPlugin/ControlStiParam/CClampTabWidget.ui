@@ -32,7 +32,7 @@
    <item>
     <widget class="QTabWidget" name="clampWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="volTab">
       <property name="sizePolicy">
@@ -714,7 +714,7 @@
                    <string> pF</string>
                   </property>
                   <property name="decimals">
-                   <number>1</number>
+                   <number>2</number>
                   </property>
                  </widget>
                 </item>
@@ -780,7 +780,7 @@
                    <string> MΩ</string>
                   </property>
                   <property name="decimals">
-                   <number>1</number>
+                   <number>2</number>
                   </property>
                  </widget>
                 </item>

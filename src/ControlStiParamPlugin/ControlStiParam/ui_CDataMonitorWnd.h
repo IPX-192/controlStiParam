@@ -48,7 +48,7 @@ public:
         gridLayout_2 = new QGridLayout(groupBox);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setHorizontalSpacing(0);
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        gridLayout_2->setContentsMargins(0, 6, 0, 0);
         dataMonitorTableView = new CDataMonitorPanel(groupBox);
         dataMonitorTableView->setObjectName(QString::fromUtf8("dataMonitorTableView"));
         dataMonitorTableView->setMaximumSize(QSize(16777215, 220));

@@ -27,11 +27,19 @@ public slots:
 
     void show();
 
+    void onUpdateChannelSFR(std::map<unsigned int,float> mapParams);
+
+    void setExperimentPara( QVariantMap varParams);
+
+signals:
+    void sigControlChannelSFR(std::map<unsigned int,float> mapParams);
+
 protected:
     QString loadQSS();
 
 private:
     CMembraneTestControlArea* m_pControlParamWnd{nullptr};
+    Experiment::CExperiment *m_pExperiment{nullptr};
 };
 
 #endif // CCONTROLSTIPARAMCOMPONENT_H

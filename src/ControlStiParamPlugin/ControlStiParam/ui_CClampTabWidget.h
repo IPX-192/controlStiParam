@@ -434,7 +434,7 @@ public:
         cmDoubleSpinBox->setMinimumSize(QSize(122, 30));
         cmDoubleSpinBox->setMaximumSize(QSize(16777215, 16777215));
         cmDoubleSpinBox->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        cmDoubleSpinBox->setDecimals(1);
+        cmDoubleSpinBox->setDecimals(2);
 
         horizontalLayout_8->addWidget(cmDoubleSpinBox);
 
@@ -461,7 +461,7 @@ public:
         rsSpinBox->setMinimumSize(QSize(122, 30));
         rsSpinBox->setMaximumSize(QSize(16777215, 16777215));
         rsSpinBox->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        rsSpinBox->setDecimals(1);
+        rsSpinBox->setDecimals(2);
 
         horizontalLayout_7->addWidget(rsSpinBox);
 
@@ -885,7 +885,7 @@ public:
 
         retranslateUi(CClampTabWidget);
 
-        clampWidget->setCurrentIndex(0);
+        clampWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(CClampTabWidget);
