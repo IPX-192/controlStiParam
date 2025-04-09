@@ -152,6 +152,7 @@ void CMembraneTestControlArea::initUI()
     m_mapSendSFR.insert("lagSpinBox",0x18);
 
     m_mapSendSFR.insert("cPercSpinBox",0x32);
+    m_mapSendSFR.insert("vLiquidSpinBox",0x34);
 
 
     //填充上传命令容器

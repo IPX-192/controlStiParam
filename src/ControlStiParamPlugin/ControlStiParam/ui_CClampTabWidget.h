@@ -20,6 +20,7 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -40,8 +41,11 @@ public:
     QComboBox *cellComboBox;
     QHBoxLayout *horizontalLayout_2;
     QCheckBox *vMenCheckBox;
+    QSpacerItem *horizontalSpacer;
     QLabel *v_memLabel;
     QDoubleSpinBox *vMimDoubleSpinBox;
+    QLabel *label_3;
+    QDoubleSpinBox *vLiquidSpinBox;
     QFrame *offsetFrame;
     QVBoxLayout *verticalLayout_4;
     QHBoxLayout *horizontalLayout_6;
@@ -197,7 +201,7 @@ public:
         verticalLayout_3->addLayout(horizontalLayout);
 
         horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setSpacing(10);
+        horizontalLayout_2->setSpacing(5);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(9, -1, -1, -1);
         vMenCheckBox = new QCheckBox(basicParamGroupBox);
@@ -205,11 +209,15 @@ public:
 
         horizontalLayout_2->addWidget(vMenCheckBox);
 
+        horizontalSpacer = new QSpacerItem(45, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer);
+
         v_memLabel = new QLabel(basicParamGroupBox);
         v_memLabel->setObjectName(QString::fromUtf8("v_memLabel"));
         sizePolicy2.setHeightForWidth(v_memLabel->sizePolicy().hasHeightForWidth());
         v_memLabel->setSizePolicy(sizePolicy2);
-        v_memLabel->setMinimumSize(QSize(100, 0));
+        v_memLabel->setMinimumSize(QSize(80, 0));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Microsoft YaHei UI Light"));
         font1.setPointSize(10);
@@ -229,8 +237,23 @@ public:
 
         horizontalLayout_2->addWidget(vMimDoubleSpinBox);
 
-        horizontalLayout_2->setStretch(1, 1);
-        horizontalLayout_2->setStretch(2, 2);
+        label_3 = new QLabel(basicParamGroupBox);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setMinimumSize(QSize(80, 0));
+        label_3->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_2->addWidget(label_3);
+
+        vLiquidSpinBox = new QDoubleSpinBox(basicParamGroupBox);
+        vLiquidSpinBox->setObjectName(QString::fromUtf8("vLiquidSpinBox"));
+        sizePolicy2.setHeightForWidth(vLiquidSpinBox->sizePolicy().hasHeightForWidth());
+        vLiquidSpinBox->setSizePolicy(sizePolicy2);
+        vLiquidSpinBox->setMinimumSize(QSize(122, 30));
+
+        horizontalLayout_2->addWidget(vLiquidSpinBox);
+
+        horizontalLayout_2->setStretch(2, 1);
+        horizontalLayout_2->setStretch(3, 2);
 
         verticalLayout_3->addLayout(horizontalLayout_2);
 
@@ -885,7 +908,7 @@ public:
 
         retranslateUi(CClampTabWidget);
 
-        clampWidget->setCurrentIndex(1);
+        clampWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(CClampTabWidget);
@@ -903,6 +926,8 @@ public:
         v_memLabel->setText(QCoreApplication::translate("CClampTabWidget", "V-mem", nullptr));
         vMimDoubleSpinBox->setPrefix(QString());
         vMimDoubleSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " mv", nullptr));
+        label_3->setText(QCoreApplication::translate("CClampTabWidget", "\346\266\262\346\216\245\347\224\265\344\275\215 ", nullptr));
+        vLiquidSpinBox->setSuffix(QCoreApplication::translate("CClampTabWidget", " mv", nullptr));
         vOffsetCheckBox->setText(QCoreApplication::translate("CClampTabWidget", "\345\220\257\347\224\250", nullptr));
         offsetLabel->setText(QCoreApplication::translate("CClampTabWidget", "Offset", nullptr));
         offsetSpinBox->setPrefix(QString());

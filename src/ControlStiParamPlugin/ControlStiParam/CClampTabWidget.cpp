@@ -61,6 +61,10 @@ CClampTabWidget::CClampTabWidget(QWidget *parent)
     ui->cAmplSpinBox->setRange(0,1000);
     ui->cDurSpinBox->setRange(20,1000);
 
+    ui->vLiquidSpinBox->setValue(0.0);
+    ui->vLiquidSpinBox->setSingleStep(0.1);
+    ui->vLiquidSpinBox->setRange(-250,250);
+
     initialize();
 
 }
@@ -119,7 +123,7 @@ void CClampTabWidget::initialize()
                     QString name = spinBox->objectName();
 
                     //判断是否是更改的有效值下发
-                    if(m_mapEnabledStates.value(m_mapValidValueFlags.value(name)))
+                    if(m_mapEnabledStates.value(m_mapValidValueFlags.value(name)) || name.contains("vLiquidSpinBox"))
                     {
                         if (qAbs(value) < 1e-10)
                         {

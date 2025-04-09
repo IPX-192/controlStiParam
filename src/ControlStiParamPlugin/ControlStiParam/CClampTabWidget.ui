@@ -32,7 +32,7 @@
    <item>
     <widget class="QTabWidget" name="clampWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="volTab">
       <property name="sizePolicy">
@@ -148,9 +148,9 @@
            </layout>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1,2">
+           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,1,2,0,0">
             <property name="spacing">
-             <number>10</number>
+             <number>5</number>
             </property>
             <property name="leftMargin">
              <number>9</number>
@@ -163,6 +163,22 @@
              </widget>
             </item>
             <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>45</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
              <widget class="QLabel" name="v_memLabel">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -172,7 +188,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>100</width>
+                <width>80</width>
                 <height>0</height>
                </size>
               </property>
@@ -221,6 +237,41 @@
               </property>
               <property name="value">
                <double>1.000000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="minimumSize">
+               <size>
+                <width>80</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>液接电位 </string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDoubleSpinBox" name="vLiquidSpinBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>122</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="suffix">
+               <string> mv</string>
               </property>
              </widget>
             </item>
